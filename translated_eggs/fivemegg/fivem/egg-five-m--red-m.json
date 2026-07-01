@@ -1,0 +1,282 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-05-26T22:28:33+02:00",
+    "name": "FiveM QBCore",
+    "author": "Burkaq",
+    "description": "FiveM sunucu egg'i — QBCore framework otomatik kurulumu, artifact güncelleme, Git ve txAdmin desteği.",
+    "features": [],
+    "docker_images": {
+        "ghcr.io/darksaid98/games:fivem": "ghcr.io/darksaid98/games:fivem"
+    },
+    "file_denylist": [],
+    "startup": "TERM=dumb $(pwd)/alpine/opt/cfx-server/ld-musl-x86_64.so.1 --library-path \"$(pwd)/alpine/usr/lib/v8/:$(pwd)/alpine/lib/:$(pwd)/alpine/usr/lib/\" -- $(pwd)/alpine/opt/cfx-server/FXServer +set citizen_dir $(pwd)/alpine/opt/cfx-server/citizen/ +set sv_licenseKey \"{{FIVEM_LICENSE}}\" +set steam_webApiKey \"{{STEAM_WEBAPIKEY}}\" +set sv_maxClients {{MAX_PLAYERS}} +sv_hostname \"{{SERVER_HOSTNAME}}\" +sets sv_projectName \"{{SERVER_PNAME}}\" +sets sv_projectDesc \"{{SERVER_PDESC}}\" +set onesync {{ONESYNC_ENABLED}} +setr voice_use3dAudio {{VOICE_USE3DAUDIO}} +setr voice_useSendingRangeOnly {{VOICE_USESENDINGRANGEONLY}} +setr voice_useNativeAudio {{VOICE_USENATIVEAUDIO}} +set sv_enforceGameBuild {{SV_GAMEBUILD}} $( [ \"$TXADMIN_ENABLE\" == \"1\" ] || printf %s '+exec server.cfg' )",
+    "config": {
+        "files": "{\r\n    \"server.cfg\": {\r\n        \"parser\": \"file\",\r\n        \"find\": {\r\n            \"endpoint_add_tcp\": \"endpoint_add_tcp \\\"0.0.0.0:{{server.build.default.port}}\\\"\",\r\n            \"endpoint_add_udp\": \"endpoint_add_udp \\\"0.0.0.0:{{server.build.default.port}}\\\"\",\r\n            \"sv_hostname\": \"sv_hostname \\\"{{server.build.env.SERVER_HOSTNAME}}\\\"\",\r\n            \"set sv_licenseKey\": \"set sv_licenseKey {{server.build.env.FIVEM_LICENSE}}\",\r\n            \"set steam_webApiKey\": \"set steam_webApiKey {{server.build.env.STEAM_WEBAPIKEY}}\",\r\n            \"sv_maxclients\": \"sv_maxclients {{server.build.env.MAX_PLAYERS}}\",\r\n            \"sets sv_projectName\": \"sets sv_projectName \\\"{{server.build.env.SERVER_PNAME}}\\\"\",\r\n            \"sets sv_projectDesc\": \"sets sv_projectDesc \\\"{{server.build.env.SERVER_PDESC}}\\\"\",\r\n            \"set mysql_connection_string\": \"set mysql_connection_string \\\"{{server.build.env.MYSQL_CONNECTION_STRING}}\\\"\",\r\n            \"setr qb_locale\": \"setr qb_locale \\\"{{server.build.env.QB_LOCALE}}\\\"\",\r\n            \"sets locale\": \"sets locale \\\"{{server.build.env.SERVER_LOCALE}}\\\"\",\r\n            \"set sv_enforceGameBuild\": \"set sv_enforceGameBuild {{server.build.env.SV_GAMEBUILD}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"succeeded. Welcome!\"\r\n}",
+        "logs": "{}",
+        "stop": "^SIGTERM"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n# FiveM + QBCore Installation Script\n#\n# Server Files: /mnt/server\napt update -y\napt install -y tar xz-utils curl git file jq unzip\n\nmkdir -p /mnt/server\ncd /mnt/server\n\nRELEASE_PAGE=$(curl -sSL https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/)\nCHANGELOGS_PAGE=$(curl -sSL https://changelogs-live.fivem.net/api/changelog/versions/linux/server)\n\nQBCORE_ENABLED=\"${QBCORE_ENABLED:-1}\"\nSERVER_CFG_URL=\"${SERVER_CFG_URL:-https://raw.githubusercontent.com/Burkaq/fivemegg/main/fivem/server.cfg}\"\n\nclone_repo() {\n  local dest=\"$1\"\n  local branch=\"$2\"\n  local url=\"$3\"\n\n  if [ -d \"$dest\" ]; then\n    echo \"Skipping existing resource: $dest\"\n    return 0\n  fi\n\n  mkdir -p \"$(dirname \"$dest\")\"\n  echo \"Cloning $url -> $dest\"\n  git clone --depth 1 --single-branch --branch \"$branch\" \"$url\" \"$dest\" \\\n    && echo \"Cloned: $dest\" \\\n    || echo \"Failed to clone: $dest\"\n}\n\ninstall_qbcore_resources() {\n  echo \"Installing QBCore Framework resources...\"\n\n  mkdir -p resources/[cfx-default] resources/[standalone] resources/[voice] resources/[defaultmaps] resources/[qb] tmp/files\n\n  echo \"Downloading qbcore.sql...\"\n  curl -sSL https://raw.githubusercontent.com/qbcore-framework/txAdminRecipe/main/qbcore.sql -o qbcore.sql\n\n  echo \"Downloading CFX default resources...\"\n  git clone --depth 1 https://github.com/citizenfx/cfx-server-data.git /tmp/cfx-server-data \\\n    && cp -Rf /tmp/cfx-server-data/resources/* resources/[cfx-default]/ \\\n    || echo \"Failed to download CFX default resources.\"\n  rm -rf resources/[cfx-default]/[gameplay]/chat 2>/dev/null || true\n\n  echo \"Downloading oxmysql...\"\n  curl -sSL https://github.com/overextended/oxmysql/releases/download/v2.14.1/oxmysql.zip -o tmp/files/oxmysql.zip\n  unzip -qo tmp/files/oxmysql.zip -d resources/[standalone]\n\n  echo \"Downloading menuv...\"\n  curl -sSL https://github.com/ThymonA/menuv/releases/download/v1.4.1/menuv_v1.4.1.zip -o tmp/menuv.zip\n  mkdir -p resources/[standalone]/menuv\n  unzip -qo tmp/menuv.zip -d resources/[standalone]/menuv\n\n  clone_repo \"resources/[standalone]/bob74_ipl\" \"master\" \"https://github.com/qbcore-framework/bob74_ipl\"\n  clone_repo \"resources/[standalone]/safecracker\" \"main\" \"https://github.com/qbcore-framework/safecracker\"\n  clone_repo \"resources/[standalone]/screenshot-basic\" \"master\" \"https://github.com/citizenfx/screenshot-basic\"\n  clone_repo \"resources/[standalone]/progressbar\" \"main\" \"https://github.com/qbcore-framework/progressbar\"\n  clone_repo \"resources/[standalone]/interact-sound\" \"master\" \"https://github.com/qbcore-framework/interact-sound\"\n  clone_repo \"resources/[standalone]/connectqueue\" \"master\" \"https://github.com/qbcore-framework/connectqueue\"\n  clone_repo \"resources/[standalone]/PolyZone\" \"master\" \"https://github.com/qbcore-framework/PolyZone\"\n\n  sleep 5\n\n  clone_repo \"resources/[voice]/pma-voice\" \"main\" \"https://github.com/AvarianKnight/pma-voice\"\n  clone_repo \"resources/[voice]/qb-radio\" \"main\" \"https://github.com/qbcore-framework/qb-radio\"\n\n  clone_repo \"resources/[defaultmaps]/hospital_map\" \"main\" \"https://github.com/qbcore-framework/hospital_map\"\n  clone_repo \"resources/[defaultmaps]/dealer_map\" \"main\" \"https://github.com/qbcore-framework/dealer_map\"\n  clone_repo \"resources/[defaultmaps]/[prison_map]\" \"main\" \"https://github.com/qbcore-framework/prison_map\"\n\n  sleep 5\n\n  local qb_repos=(\n    \"qb-core\"\n    \"qb-scoreboard\"\n    \"qb-adminmenu\"\n    \"qb-multicharacter\"\n    \"qb-target\"\n    \"qb-vehiclesales\"\n    \"qb-vehicleshop\"\n    \"qb-houserobbery\"\n    \"qb-prison\"\n    \"qb-hud\"\n    \"qb-management\"\n    \"qb-weed\"\n    \"qb-lapraces\"\n    \"qb-inventory\"\n    \"qb-houses\"\n    \"qb-garages\"\n    \"qb-ambulancejob\"\n    \"qb-radialmenu\"\n    \"qb-crypto\"\n    \"qb-weathersync\"\n    \"qb-policejob\"\n    \"qb-apartments\"\n    \"qb-vehiclekeys\"\n    \"qb-mechanicjob\"\n    \"qb-phone\"\n    \"qb-vineyard\"\n    \"qb-weapons\"\n    \"qb-scrapyard\"\n    \"qb-towjob\"\n    \"qb-streetraces\"\n    \"qb-storerobbery\"\n    \"qb-spawn\"\n    \"qb-smallresources\"\n    \"qb-recyclejob\"\n    \"qb-crafting\"\n    \"qb-diving\"\n    \"qb-cityhall\"\n    \"qb-truckrobbery\"\n    \"qb-pawnshop\"\n    \"qb-minigames\"\n    \"qb-taxijob\"\n    \"qb-busjob\"\n    \"qb-newsjob\"\n    \"qb-fuel\"\n    \"qb-jewelery\"\n    \"qb-bankrobbery\"\n    \"qb-banking\"\n    \"qb-clothing\"\n    \"qb-hotdogjob\"\n    \"qb-doorlock\"\n    \"qb-garbagejob\"\n    \"qb-drugs\"\n    \"qb-shops\"\n    \"qb-interior\"\n    \"qb-menu\"\n    \"qb-input\"\n    \"qb-loading\"\n  )\n\n  local repo\n  local count=0\n  for repo in \"${qb_repos[@]}\"; do\n    clone_repo \"resources/[qb]/${repo}\" \"main\" \"https://github.com/qbcore-framework/${repo}\"\n    count=$((count + 1))\n    if [ $((count % 8)) -eq 0 ]; then\n      sleep 5\n    fi\n  done\n\n  rm -rf /tmp/cfx-server-data tmp/files tmp/menuv\n  echo \"QBCore resource installation complete.\"\n  echo \"IMPORTANT: Import qbcore.sql into your MySQL/MariaDB database before starting the server.\"\n}\n\n# Check wether to run installation or update version of script\nif [ ! -d \"./alpine/\" ] && [ ! -d \"./resources/\" ]; then\n  echo \"Beginning installation of new FiveM server.\"\n\n  if [[ \"${FIVEM_VERSION}\" == \"recommended\" ]] || [[ -z ${FIVEM_VERSION} ]]; then\n    DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.recommended_download')\n  elif [[ \"${FIVEM_VERSION}\" == \"latest\" ]]; then\n    DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')\n  else\n    VERSION_LINK=$(echo -e \"${RELEASE_PAGE}\" | grep -Eo '\".*/*.tar.xz\"' | grep -Eo '\".*/*.tar.xz\"' | sed 's/\\\"//g'  | sed 's/\\.\\///1' | grep -i \"${FIVEM_VERSION}\" | grep -o =.* |  tr -d '=')\n    if [[ \"${VERSION_LINK}\" == \"\" ]]; then\n      echo -e \"Defaulting to recommended as the version requested was invalid.\"\n      DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.recommended_download')\n    else\n      DOWNLOAD_LINK=$(echo https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/${VERSION_LINK})\n    fi\n  fi\n\n  echo -e \"Running curl -sSL ${DOWNLOAD_LINK} -o ${DOWNLOAD_LINK##*/}...\"\n  curl -sSL ${DOWNLOAD_LINK} -o ${DOWNLOAD_LINK##*/}\n\n  echo \"Extracting FiveM/RedM FXServer artifact files...\"\n  FILETYPE=$(file -F ',' ${DOWNLOAD_LINK##*/} | cut -d',' -f2 | cut -d' ' -f2)\n  if [ \"$FILETYPE\" == \"gzip\" ]; then\n    tar xzvf ${DOWNLOAD_LINK##*/}\n  elif [ \"$FILETYPE\" == \"Zip\" ]; then\n    unzip ${DOWNLOAD_LINK##*/}\n  elif [ \"$FILETYPE\" == \"XZ\" ]; then\n    tar xvf ${DOWNLOAD_LINK##*/}\n  else\n    echo -e \"Downloaded artifact of unknown filetype. Exiting.\"\n    exit 2\n  fi\n\n  rm -rf ${DOWNLOAD_LINK##*/} run.sh\n\n  if [ -e server.cfg ]; then\n    echo \"Server config file already exists. Skipping download of new one.\"\n  else\n    echo \"Downloading QBCore server config...\"\n    curl -sSL \"${SERVER_CFG_URL}\" -o server.cfg\n  fi\n\n  if [ \"${GIT_ENABLED}\" == \"1\" ] && [ ! -d \"/mnt/server/resources\" ]; then\n    echo \"Preparing to clone resources repo from git.\"\n\n    if [[ ${GIT_REPOURL} != *.git ]]; then\n      GIT_REPOURL=${GIT_REPOURL}.git\n    fi\n\n    if [ -z \"${GIT_USERNAME}\" ] && [ -z \"${GIT_TOKEN}\" ]; then\n      echo -e \"Git Username or Git Token was not specified.\"\n    else\n      GIT_REPOURL=\"https://${GIT_USERNAME}:${GIT_TOKEN}@$(echo -e ${GIT_REPOURL} | cut -d/ -f3-)\"\n    fi\n\n    if [ -z ${GIT_BRANCH} ]; then\n      echo -e \"Cloning default branch into /resources/*.\"\n      git clone ${GIT_REPOURL} /mnt/server/resources\n    else\n      echo -e \"Cloning ${GIT_BRANCH} branch into /resources/*.\"\n      git clone --single-branch --branch ${GIT_BRANCH} ${GIT_REPOURL} /mnt/server/resources && echo \"Finished cloning into /resources/* from Git.\" || echo \"Failed cloning into /resources/* from Git.\"\n    fi\n\n  elif [ \"${QBCORE_ENABLED}\" == \"1\" ]; then\n    install_qbcore_resources\n\n  else\n    mkdir -p /mnt/server/resources\n    echo \"Preparing to clone default FiveM resources.\"\n    git clone https://github.com/citizenfx/cfx-server-data.git /tmp && echo \"Downloaded server from git.\" || echo \"Downloading from git failed.\"\n    cp -Rf /tmp/resources/* resources/\n  fi\n\n  mkdir -p logs/\n  echo \"Installation complete.\"\n\nelse\n  echo \"Beginning update of existing FiveM/RedM FXServer server artifact.\"\n\n  if [ -d \"./alpine/\" ]; then\n    echo \"Deleting old FXServer artifact...\"\n    rm -r ./alpine/\n    while [ -d \"./alpine/\" ]; do\n      sleep 1s\n    done\n    echo \"Deleted old FXServer artifact files successfully.\"\n  fi\n\n  if [[ \"${FIVEM_VERSION}\" == \"recommended\" ]] || [[ -z ${FIVEM_VERSION} ]]; then\n    DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.recommended_download')\n  elif [[ \"${FIVEM_VERSION}\" == \"latest\" ]]; then\n    DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.latest_download')\n  else\n    VERSION_LINK=$(echo -e \"${RELEASE_PAGE}\" | grep -Eo '\".*/*.tar.xz\"' | grep -Eo '\".*/*.tar.xz\"' | sed 's/\\\"//g'  | sed 's/\\.\\///1' | grep -i \"${FIVEM_VERSION}\" | grep -o =.* |  tr -d '=')\n    if [[ \"${VERSION_LINK}\" == \"\" ]]; then\n      echo -e \"Defaulting to recommended as the version requested was invalid.\"\n      DOWNLOAD_LINK=$(echo $CHANGELOGS_PAGE | jq -r '.recommended_download')\n    else\n      DOWNLOAD_LINK=$(echo https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/${VERSION_LINK})\n    fi\n  fi\n\n  echo -e \"Running curl -sSL ${DOWNLOAD_LINK} -o ${DOWNLOAD_LINK##*/}...\"\n  curl -sSL ${DOWNLOAD_LINK} -o ${DOWNLOAD_LINK##*/}\n\n  echo \"Extracting FiveM/RedM FXServer artifact files...\"\n  FILETYPE=$(file -F ',' ${DOWNLOAD_LINK##*/} | cut -d',' -f2 | cut -d' ' -f2)\n  if [ \"$FILETYPE\" == \"gzip\" ]; then\n    tar xzvf ${DOWNLOAD_LINK##*/}\n  elif [ \"$FILETYPE\" == \"Zip\" ]; then\n    unzip ${DOWNLOAD_LINK##*/}\n  elif [ \"$FILETYPE\" == \"XZ\" ]; then\n    tar xvf ${DOWNLOAD_LINK##*/}\n  else\n    echo -e \"Downloaded artifact of unknown filetype. Exiting.\"\n    exit 2\n  fi\n\n  rm -rf ${DOWNLOAD_LINK##*/} run.sh\n\n  echo \"Update complete.\"\nfi\n",
+            "container": "ghcr.io/parkervcp/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "CFX Lisans anahtarı",
+            "description": "Hizmeti başlatmak için gereklidir. anahtarlarınızı su adresten alın: https://portal.cfx.re/",
+            "env_variable": "FIVEM_LICENSE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:33",
+            "field_type": "text"
+        },
+        {
+            "name": "Steam Web Api anahtarı",
+            "description": "Steam WebApiKey'inizi kullanın veya 'none' olarak ayarlayın. anahtarınızı su adresten alın: https://steamcommunity.com/dev/apikey/",
+            "env_variable": "STEAM_WEBAPIKEY",
+            "default_value": "none",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "FXServer Sürümü",
+            "description": "En son veya belirtilen FiveM/RedM FXServer artifact'ini indirir.\r\n\r\n'latest', 'recommended' veya belirli bir sürüm olarak ayarlanabilir.\r\nVeya indirmek için doğrudan bir sürüm belirtin, örneğin '25770' veya '1383-e5ea040353ce1b8bc86e37982bf5d888938e3096'.\r\n\r\nEn son sürümü buradan bulabilirsiniz - https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/\r\n\r\n'Ayarlar' kısmından 'Sunucuyu Yeniden Kur' tuşuna basmak su anda yüklü olanı kaldıracaktır ve güncellenmiş biriyle değiştirecektir.",
+            "env_variable": "FIVEM_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:50",
+            "field_type": "text"
+        },
+        {
+            "name": "QBCore Otomatik Kurulum",
+            "description": "Kurulum sırasında resmi txAdmin QBCore tarifine göre tüm framework kaynaklarını otomatik indirir. Git Enabled açıksa bu ayar yok sayılır.",
+            "env_variable": "QBCORE_ENABLED",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "MySQL Bağlantı Dizesi",
+            "description": "oxmysql veritabani bağlantı dizesi. örnek: mysql://kullanıcı:şifre@127.0.0.1/qbcore?charset=utf8mb4",
+            "env_variable": "MYSQL_CONNECTION_STRING",
+            "default_value": "mysql://user:password@127.0.0.1/qbcore?charset=utf8mb4",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "QBCore Dili",
+            "description": "QBCore dil kodu (örnek: tr, en).",
+            "env_variable": "QB_LOCALE",
+            "default_value": "tr",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:10",
+            "field_type": "text"
+        },
+        {
+            "name": "Sunucu Dili",
+            "description": "Sunucu tarayici dili (örnek: tr-TR, en-US).",
+            "env_variable": "SERVER_LOCALE",
+            "default_value": "tr-TR",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:10",
+            "field_type": "text"
+        },
+        {
+            "name": "Git Etkin",
+            "description": "Bunu etkinleştirmek, her sunucu başlangıcında belirtilen depoyu /resources dizinine klonlar veya çeker. Sunucuyu simdi kuruyorsaniz, git deposunu klonlar.",
+            "env_variable": "GIT_ENABLED",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "Git kullanıcı adı",
+            "description": "Git ile kimlik doğrulamak için kullanılan kullanıcı adı.",
+            "env_variable": "GIT_USERNAME",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:39",
+            "field_type": "text"
+        },
+        {
+            "name": "Git anahtarı",
+            "description": "Git ile kimlik doğrulamak için kullanılan şifre.\r\n\r\nKişisel Erisim anahtarı kullanmak en iyi uygulamadir.\r\nhttps://github.com/settings/tokens\r\nhttps://gitlab.com/-/profile/personal_access_tokens",
+            "env_variable": "GIT_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Git Depo URL'si",
+            "description": "Git deposunun URL'si.\r\n\r\nörnek: https://github.com/citizenfx/cfx-server-data",
+            "env_variable": "GIT_REPOURL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Git Dal",
+            "description": "Kullanmak istediğiniz dalin adı. Belirtilmezse varsayılan dal kullanılır.",
+            "env_variable": "GIT_BRANCH",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        },
+        {
+            "name": "txAdmin'i Etkinleştir",
+            "description": "txAdmin'i etkinleştirir.\r\n\r\n(varsayılan: kapali)",
+            "env_variable": "TXADMIN_ENABLE",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "txAdmin Portu",
+            "description": "txAdmin panelinin portu.",
+            "env_variable": "TXHOST_TXA_PORT",
+            "default_value": "40120",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:5",
+            "field_type": "text"
+        },
+        {
+            "name": "FiveM Oyun Derlemesi",
+            "description": "sv_enforceGameBuild convar'ini ayarlar. Sunucunun kullanması gereken istemci GTA derlemesini belirtir. \r\nOlası degerler için dokumantasyona bakin: https://docs.fivem.net/docs/server-manual/server-commands/#sv_enforcegamebuild-build",
+            "env_variable": "SV_GAMEBUILD",
+            "default_value": "3095",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:4",
+            "field_type": "text"
+        },
+        {
+            "name": "Maksimum Oyuncu sayısı",
+            "description": "Maksimum oyuncu sayısını belirler.",
+            "env_variable": "MAX_PLAYERS",
+            "default_value": "48",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|between:1,2048",
+            "field_type": "text"
+        },
+        {
+            "name": "Sunucu Ana Bilgisayar adı",
+            "description": "Sunucu tarayıcısında görünen ad.",
+            "env_variable": "SERVER_HOSTNAME",
+            "default_value": "QBCore RP Sunucum",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Proje adı",
+            "description": "Sunucu tarayıcısında görünen ad.",
+            "env_variable": "SERVER_PNAME",
+            "default_value": "QBCore RP",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Proje Açıklaması",
+            "description": "Sunucu tarayıcısında görünen aciklama.",
+            "env_variable": "SERVER_PDESC",
+            "default_value": "QBCore framework ile kurulmus FiveM roleplay sunucusu.",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Onesync",
+            "description": "Onesync'i etkinleştirmek için 'on', devre disi bırakmak için 'off' yapın. Alternatif olarak 'legacy' kullanilabilir ancak önerilmez. Bir sunucu çalıştırıyorsanız Onesync etkin olmalidir.",
+            "env_variable": "ONESYNC_ENABLED",
+            "default_value": "on",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:on,off,legacy",
+            "field_type": "text"
+        },
+        {
+            "name": "3D Ses Kullan",
+            "description": "3D sesi etkinleştirir veya devre disi birakir. 'UseNativeAudio' true ise etkisizdir.",
+            "env_variable": "VOICE_USE3DAUDIO",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "Yalnızca Gönderim Aralığı Kullan",
+            "description": "Yalnizca gönderim araligini kullanir.",
+            "env_variable": "VOICE_USESENDINGRANGEONLY",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "Yerel Ses Kullan",
+            "description": "Yerel sesi etkinleştirir veya devre disi birakir. En iyi VOIP deneyimi için bunu kullanmalısınız. 'Use3dAudio'dan çok daha ustundur.",
+            "env_variable": "VOICE_USENATIVEAUDIO",
+            "default_value": "1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "txAdmin Veri Yolu",
+            "description": "txAdmin'in verileri depoladığı konum.",
+            "env_variable": "TXHOST_DATA_PATH",
+            "default_value": "/home/container/txData",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "txAdmin Oyun adı",
+            "description": "Yalnizca FiveM veya RedM sunucularını çalıştırmakla sinirlar.\r\nKurulum sayfasi yalnizca asagida belirtilen oyun için tarifler gösterir!\r\nseçenekler: fivem veya redm",
+            "env_variable": "TXHOST_GAME_NAME",
+            "default_value": "fivem",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|in:fivem,redm",
+            "field_type": "text"
+        }
+    ]
+}
