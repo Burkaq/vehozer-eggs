@@ -35,7 +35,7 @@
     "variables": [
         {
             "name": "Canvas MC Sürümü",
-            "description": "CanvasMC-Minecraft version (örnek: 1.21.4). Set to 'latest' to use latest version",
+            "description": "CanvasMC-Minecraft sürümü (örnek: 1.21.4). En son sürümü kullanmak için 'en son' olarak ayarlayın",
             "env_variable": "MC_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -45,7 +45,7 @@
         },
         {
             "name": "CanvasMC Derleme Numarası",
-            "description": "Build number from https://jenkins.canvasmc.io/job/Canvas/. Set to 'latest' to get the newest build",
+            "description": "https://jenkins.canvasmc.io/job/Canvas/. adresinden derleme numarası En yeni yapıyı almak için 'en son' olarak ayarlayın",
             "env_variable": "CANVAS_BUILD",
             "default_value": "latest",
             "user_viewable": true,

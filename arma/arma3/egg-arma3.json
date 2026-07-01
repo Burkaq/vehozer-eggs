@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "[ZORUNLU] Steam kullanıcı adı",
-            "description": "Kurulum ve güncellemeler için kullanılır. Account does not need to own Arma 3, but MUST BE a VALID Steam account (anonymous login cannot be used). For security reasons it is recommended that you create a new Steam account just for your dedicated servers. *This info is not visible to sunucu owner.*",
+            "description": "Kurulum ve güncellemeler için kullanılır. Hesabın Arma 3'e sahip olması gerekmez ancak GEÇERLİ bir Steam hesabı OLMALIDIR (anonim giriş kullanılamaz). Güvenlik nedeniyle, yalnızca özel sunucularınız için yeni bir Steam hesabı oluşturmanız önerilir. *Bu bilgi sunucu sahibi tarafından görülemez.*",
             "env_variable": "STEAM_USER",
             "default_value": "your_steam_username",
             "user_viewable": false,
@@ -42,7 +42,7 @@
         },
         {
             "name": "[ZORUNLU] Steam Şifresi",
-            "description": "Kurulum ve güncellemeler için kullanılır. Steam Guard MUST be completely TURNED OFF for install to complete successfully. *This info is not visible to sunucu owner, BUT IS stored in PLAIN TEXT. It is NOT advised to use a personal account; best to use a dummy account.*",
+            "description": "Kurulum ve güncellemeler için kullanılır. Kurulumun başarıyla tamamlanabilmesi için Steam Guard'ın tamamen KAPATILMASI GEREKİR. *Bu bilgi sunucu sahibi tarafından görülemez, ANCAK DÜZ METİNDE saklanır. Kişisel bir hesap kullanmanız ÖNERİLMEZ; sahte bir hesap kullanmak en iyisidir.*",
             "env_variable": "STEAM_PASS",
             "default_value": "your_steam_password",
             "user_viewable": false,
@@ -52,7 +52,7 @@
         },
         {
             "name": "SteamCMD Yeniden Deneme sayısı",
-            "description": "How many times SteamCMD should retry downloading a server veya mod after a recoverable error. (ie. A particularly large mod like CUP veya RHS download times out)",
+            "description": "Kurtarılabilir bir hatadan sonra SteamCMD'nin bir sunucuyu veya modu indirmeyi kaç kez yeniden denemesi gerektiği. (örn. CUP veya RHS gibi özellikle büyük bir modun indirme süresi doluyor)",
             "env_variable": "STEAMCMD_ATTEMPTS",
             "default_value": "3",
             "user_viewable": false,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Sunucu Binary'si",
-            "description": "Server binary to call on server start. (32-bit: arma3server | 64-bit: arma3server_x64)",
+            "description": "Sunucu başlatıldığında çağrılacak sunucu ikili dosyası. (32 bit: arma3server | 64 bit: arma3server_x64)",
             "env_variable": "SERVER_BINARY",
             "default_value": "arma3server_x64",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Ekstra Başlangıç Parametreleri",
-            "description": "See https://community.bistudio.com/wiki/Arma_3_Startup_Parameters for more info on valid flags for this field. \"-noLogs\" is recommended to prevent console rate-limit warnings.",
+            "description": "Bu alana ilişkin geçerli işaretler hakkında daha fazla bilgi için https://community.bistudio.com/wiki/Arma_3_Startup_Parameters adresine bakın. Konsol hız sınırı uyarılarını önlemek için \"-noLogs\" önerilir.",
             "env_variable": "STARTUP_PARAMS",
             "default_value": "-noLogs",
             "user_viewable": true,
@@ -81,8 +81,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Maksimum oyuncu sayısı.allowed to join sunucu.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılabilecek maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "32",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Sunucuya katılmak için gerekli şifre.Şifre olmaması için bos bırakın.",
+            "description": "Sunucuya katılmak için gerekli şifre. Şifre olmaması için boş bırakın.",
             "env_variable": "SERVER_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Otomatik Güncellemeler",
-            "description": "Quickly checks for any server veya mod updates on startup, and updates if necessary. (1 Enable | 0 Disable)",
+            "description": "Başlangıçta herhangi bir sunucu veya mod güncellemesini hızlı bir şekilde kontrol eder ve gerekirse güncelleme yapar. (1 Etkinleştir | 0 Devre Dışı Bırak)",
             "env_variable": "UPDATE_SERVER",
             "default_value": "1",
             "user_viewable": true,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Mod İndirme/Güncellemeleri Devre Dışı Bırak",
-            "description": "If the Steam account does not own the base Arma 3 game, Steam Workshop mod downloads/updates will not work. If so, this setting allows disabling of this feature to avoid errors. (1 Disable | 0 Enable)",
+            "description": "Steam hesabı temel Arma 3 oyununa sahip değilse Steam Workshop mod indirmeleri/güncellemeleri çalışmayacaktır. Böyle bir durumda, bu ayar hataları önlemek için bu özelliğin devre dışı bırakılmasına olanak tanır. (1 Devre Dışı | 0 Etkinleştir)",
             "env_variable": "DISABLE_MOD_UPDATES",
             "default_value": "0",
             "user_viewable": false,
@@ -121,8 +121,8 @@
             "field_type": "text"
         },
         {
-            "name": "Yapimci DLC'lerini İndir",
-            "description": "Downloads/Updates all the mod files required to run any CDLC during the next Automatic Update. DLCs can be enabled by adding their mod folder name to the Additional Mods startup variable. For example, add \"vn;\" to load the Prairie Fire CDLC. (1 Yes | 0 No)",
+            "name": "Yapımcı DLC'lerini İndir",
+            "description": "Bir sonraki Otomatik Güncelleme sırasında herhangi bir CDLC'yi çalıştırmak için gereken tüm mod dosyalarını indirir/günceller. DLC'ler, mod klasörü adlarının Ek Modlar başlangıç ​​değişkenine eklenmesiyle etkinleştirilebilir. Örneğin, \"vn;\" ekleyin Prairie Fire CDLC'yi yüklemek için. (1 Evet | 0 Hayır)",
             "env_variable": "CDLC",
             "default_value": "0",
             "user_viewable": true,
@@ -132,7 +132,7 @@
         },
         {
             "name": "Mod Listesi dosyası (A3 Launcher'dan Disa Aktarilmis)",
-            "description": "Filename for an exported modlist. This file will be parsed for mod installation and loading. Upload your HTML file to the root directory (eg. /home/container/modlist.html). Leave blank to disable loading mods from a modlist.",
+            "description": "Dışa aktarılan mod listesinin dosya adı. Bu dosya mod kurulumu ve yükleme için ayrıştırılacaktır. HTML dosyanızı kök dizine yükleyin (örn. /home/container/modlist.html). Mod listesinden mod yüklemeyi devre dışı bırakmak için boş bırakın.",
             "env_variable": "MOD_FILE",
             "default_value": "modlist.html",
             "user_viewable": true,
@@ -142,7 +142,7 @@
         },
         {
             "name": "Ek Modlar",
-            "description": "A semicolon-separated list of additional mod folders to load. Useful for loading CDLCs veya manually uploaded mods. This mod list will be loaded in addition to the Modlist File (if used). Any mods in this list that are in \"@workshopID\" form will also be included in Automatic Updates (if enabled). NO capital letters, spaces, veya folders starting with a number! (ex. myMod;vn;@123456789;@987654321;etc;)",
+            "description": "Yüklenecek ek mod klasörlerinin noktalı virgülle ayrılmış listesi. CDLC'leri veya manuel olarak yüklenen modları yüklemek için kullanışlıdır. Bu mod listesi, Modlist Dosyasına (kullanılıyorsa) ek olarak yüklenecektir. Bu listedeki \"@workshopID\" formundaki tüm modlar Otomatik Güncellemelere de dahil edilecektir (eğer etkinse). Büyük harf, boşluk veya rakamla başlayan klasör YOKTUR! (örn. myMod;vn;@123456789;@987654321;vb;)",
             "env_variable": "MODIFICATIONS",
             "default_value": "",
             "user_viewable": true,
@@ -152,7 +152,7 @@
         },
         {
             "name": "[Onarım] Mod dosyalarını Küçük Harf Yap",
-            "description": "Every mod that is set to be loaded will have its folder and files changed to lowercase (to prevent errors). It is recommended to enable this for one server boot after copying a mod from a Windows machine to sunucu, veya if mods seem to not be loading. (1 Enable | 0 Disable)",
+            "description": "Yüklenecek her modun klasörü ve dosyaları küçük harfle değiştirilecektir (hataları önlemek için). Bir Windows makinesinden sunucuya bir mod kopyaladıktan sonra veya modlar yüklenmiyor gibi görünüyorsa, bunun bir sunucu önyüklemesi için etkinleştirilmesi önerilir. (1 Etkinleştir | 0 Devre Dışı Bırak)",
             "env_variable": "MODS_LOWERCASE",
             "default_value": "0",
             "user_viewable": true,
@@ -162,7 +162,7 @@
         },
         {
             "name": "[Onarım] Sunucu dosyalarını Doğrula",
-            "description": "Validates all server files when Automatic Updates is enabled. Not: This will significantly increase server startup times, so it is recommended to only enable this when needed. (1 Enable | 0 Disable)",
+            "description": "Otomatik Güncelleştirmeler etkinleştirildiğinde tüm sunucu dosyalarını doğrular. Not: Bu, sunucu başlatma sürelerini önemli ölçüde artıracağından, bunun yalnızca gerektiğinde etkinleştirilmesi önerilir. (1 Etkinleştir | 0 Devre Dışı Bırak)",
             "env_variable": "VALIDATE_SERVER",
             "default_value": "0",
             "user_viewable": true,
@@ -172,7 +172,7 @@
         },
         {
             "name": "[Gelişmiş] Yalnızca Sunucu Tarafı Modlar",
-            "description": "Mod folders to be used with the \"-serverMods\" startup option. They only run server-side and are not required by clients if \"verifySignatures\" is enabled. Any mods in this list that are in \"@workshopID\" form will also be included in Automatic Updates (if enabled). NO capital letters, spaces, veya folders starting with a number! Each folder must be followed with a semicolon (ex. @123456789;@987654321;etc;)",
+            "description": "\"-serverMods\" başlangıç ​​seçeneğiyle kullanılacak mod klasörleri. Bunlar yalnızca sunucu tarafında çalışır ve \"verifySignatures\" etkinse istemciler tarafından gerekli değildir. Bu listedeki \"@workshopID\" formundaki tüm modlar Otomatik Güncellemelere de dahil edilecektir (eğer etkinse). Büyük harf, boşluk veya rakamla başlayan klasör YOKTUR! Her klasörün ardından noktalı virgül konulmalıdır (örn. @123456789;@987654321;etc;)",
             "env_variable": "SERVERMODS",
             "default_value": "",
             "user_viewable": true,
@@ -182,7 +182,7 @@
         },
         {
             "name": "[Gelişmiş] İsteğe Bağlı İstemci Tarafı Modlar",
-            "description": "A semicolon-separated list of optional mods to load into the keys folder, but not include in server's mod parameter. Useful for allowing clients to connect to sunucu with veya without the mod loaded. Mods in this list must be in \"@workshopID\" form (ex. @123456789;@987654321;). These will also be included in Automatic Updates (if enabled).",
+            "description": "Keys klasörüne yüklenecek, ancak sunucunun mod parametresine dahil edilmeyecek isteğe bağlı modların noktalı virgülle ayrılmış listesi. İstemcilerin sunucuya mod yüklü olmadan veya ile bağlanmasına izin vermek için kullanışlıdır. Bu listedeki modlar \"@workshopID\" biçiminde olmalıdır (ör. @123456789;@987654321;). Bunlar aynı zamanda Otomatik Güncelleştirmeler'e de dahil edilecektir (etkinse).",
             "env_variable": "OPTIONALMODS",
             "default_value": "",
             "user_viewable": true,
@@ -192,7 +192,7 @@
         },
         {
             "name": "[Gelişmiş] SteamCMD için Ek Bayraklar",
-            "description": "[This will override \"Download Creator DLCs\" if used] Only used when checking for server updates, and typically used for grabbing beta builds. örnek: -beta profiling -betapassword CautionSpecialProfilingAndTestingBranchArma3",
+            "description": "[Bu, eğer kullanılırsa \"Yaratıcı DLC'lerini İndir\" seçeneğini geçersiz kılacaktır.] Yalnızca sunucu güncellemelerini kontrol ederken kullanılır ve genellikle beta sürümlerini almak için kullanılır. örnek: -beta profil oluşturma -betapassword CautionSpecialProfilingAndTestingBranchArma3",
             "env_variable": "STEAMCMD_EXTRA_FLAGS",
             "default_value": "",
             "user_viewable": true,
@@ -202,7 +202,7 @@
         },
         {
             "name": "[Gelişmiş] Headless Client (HC)",
-            "description": "Number of Headless Clients (0 - 5) to launch parallel with sunucu. Be süre to set the following \"HC Connect Password\" variable if your server is password locked. PLEASE Not: Using a headless client is only recommended for advanced users, adds extra overhead to your permitted server resources, and is only beneficial if a properly written, HC compliant, mission file is provided. See https://community.bistudio.com/wiki/Arma_3:_Headless_Client for more info.",
+            "description": "Sunucuyla paralel başlatılacak Başsız İstemci sayısı (0 - 5). Sunucunuz şifreyle kilitliyse aşağıdaki \"HC Connect Şifresi\" değişkenini ayarlamaya dikkat edin. LÜTFEN Dikkat: Başsız bir istemcinin kullanılması yalnızca ileri düzey kullanıcılar için önerilir, izin verilen sunucu kaynaklarınıza ekstra yük getirir ve yalnızca düzgün yazılmış, HC uyumlu bir görev dosyası sağlanırsa faydalıdır. Daha fazla bilgi için https://community.bistudio.com/wiki/Arma_3:_Headless_Client adresine bakın.",
             "env_variable": "HC_NUM",
             "default_value": "0",
             "user_viewable": true,
@@ -212,7 +212,7 @@
         },
         {
             "name": "[Gelişmiş] HC Konsol Çıktılısını Gizle",
-            "description": "Hides Headless Client console output (except for critical errors) to prevent nonessential console spam. (1 Hide | 0 Show)",
+            "description": "Gerekli olmayan konsol spam'ını önlemek için Başsız İstemci konsolu çıkışını (kritik hatalar hariç) gizler. (1 Gizle | 0 Göster)",
             "env_variable": "HC_HIDE",
             "default_value": "1",
             "user_viewable": true,
@@ -222,7 +222,7 @@
         },
         {
             "name": "[Gelişmiş] Başlangıçta HC Profil Önbelleğini Temizle",
-            "description": "Deletes all profiles from the \"/home/container/serverprofile/home\" directory on startup, except for sunucu's main \"Player\" profile. Recommended to enable when running HCs, because the profiles are generally unused and can cause HCs to crash if they develop errors. (1 Enable | 0 Disable)",
+            "description": "Sunucunun ana \"Oynatıcı\" profili hariç, başlangıçta \"/home/container/serverprofile/home\" dizinindeki tüm profilleri siler. Profiller genellikle kullanılmadığı ve hata oluşması durumunda HC'lerin çökmesine neden olabileceği için HC'leri çalıştırırken etkinleştirilmesi önerilir. (1 Etkinleştir | 0 Devre Dışı Bırak)",
             "env_variable": "CLEAR_CACHE",
             "default_value": "0",
             "user_viewable": true,
@@ -242,7 +242,7 @@
         },
         {
             "name": "[Gelişmiş] basic.cfg URL",
-            "description": "URL to a valid Arma 3 basic.cfg file. The \"Basic\" configuration file is used during server runtime for advanced network performance tuning. Because it is a required file, this URL is used to download it during installation, veya if the file is found missing during startup.",
+            "description": "Geçerli bir Arma 3 basic.cfg dosyasının URL'si. \"Temel\" yapılandırma dosyası, sunucu çalışma zamanı sırasında gelişmiş ağ performansı ayarı için kullanılır. Gerekli bir dosya olduğundan kurulum sırasında veya başlatma sırasında dosya eksik bulunursa bu URL onu indirmek için kullanılır.",
             "env_variable": "BASIC_URL",
             "default_value": "https://raw.githubusercontent.com/ptero-eggs/game-eggs/main/arma/arma3/egg-arma3-config/basic.cfg",
             "user_viewable": false,

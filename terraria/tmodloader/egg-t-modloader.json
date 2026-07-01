@@ -31,7 +31,7 @@
     "variables": [
         {
             "name": "Dünya adı",
-            "description": "The name for the world file.",
+            "description": "Dünya dosyasının adı.",
             "env_variable": "WORLD_NAME",
             "default_value": "world",
             "user_viewable": true,
@@ -40,8 +40,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "İzin verilen maksimum oyuncu sayısı.a server will hold.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucunun barındırabileceği maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "8",
             "user_viewable": true,
@@ -51,7 +51,7 @@
         },
         {
             "name": "Dünya Boyutu",
-            "description": "Defines the worlds size. 3 sizes 1 (small), 2 (medium), 3 (large).",
+            "description": "Dünyanın boyutunu tanımlar. 3 boyut 1 (küçük), 2 (orta), 3 (büyük).",
             "env_variable": "WORLD_SIZE",
             "default_value": "1",
             "user_viewable": true,
@@ -61,7 +61,7 @@
         },
         {
             "name": "tModloader Sürümü",
-            "description": "The version of tModloader that is to be used.",
+            "description": "kullanılacak tModloader sürümü.",
             "env_variable": "VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -71,7 +71,7 @@
         },
         {
             "name": "GitHub kullanıcı adı",
-            "description": "GitHub user to use for api calls.\r\n\r\nThis only needs to be set if you hit the GitHub API too often across multiple servers.",
+            "description": "API çağrıları için kullanılacak GitHub kullanıcısı.\r\n\r\nBunun yalnızca GitHub API'sine birden fazla sunucuda çok sık basarsanız ayarlanması gerekir.",
             "env_variable": "GITHUB_USER",
             "default_value": "",
             "user_viewable": false,
@@ -81,7 +81,7 @@
         },
         {
             "name": "GitHub OAuth anahtarı",
-            "description": "This can be either an OAuth veya a Personal Access Token.\r\n\r\nThis is required for the install is you set a user.",
+            "description": "Bu bir OAuth veya Kişisel Erişim Jetonu olabilir.\r\n\r\nBir kullanıcıyı ayarlamanız durumunda kurulum için bu gereklidir.",
             "env_variable": "GITHUB_OAUTH_TOKEN",
             "default_value": "",
             "user_viewable": false,
@@ -91,7 +91,7 @@
         },
         {
             "name": "Zorluk",
-            "description": "Sets the difficulty of the world when using auto-create. Options: 0(normal), 1(expert), 2(master), 3(journey)",
+            "description": "Otomatik oluşturmayı kullanırken dünyanın zorluğunu ayarlar. Seçenekler: 0(normal), 1(uzman), 2(ana), 3(yolculuk)",
             "env_variable": "DIFFICULTY",
             "default_value": "0",
             "user_viewable": true,
@@ -101,7 +101,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Server password for users to connect to your server.\r\nCan be empty for no password.",
+            "description": "Kullanıcıların sunucunuza bağlanabilmesi için sunucu şifresi.\r\nŞifre olmadığında boş olabilir.",
             "env_variable": "SERVER_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -111,7 +111,7 @@
         },
         {
             "name": "MOTD",
-            "description": "Message of the Day for sunucu",
+            "description": "Sunucu için Günün Mesajı",
             "env_variable": "MOTD",
             "default_value": "Please don’t cut the purple trees!",
             "user_viewable": true,

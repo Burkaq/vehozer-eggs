@@ -47,7 +47,7 @@
         },
         {
             "name": "NeoForge Sürümü",
-            "description": "The full exact version.\r\n\r\nEx. 20.4.194 \r\nhttps://projects.neoforged.net/neoforged/neoforge\r\n\r\nIf it fails to download sunucu files it will fail to install.",
+            "description": "Tam tam sürüm.\r\n\r\nEski. 20.4.194 \r\nhttps://projects.neoforged.net/neoforged/neoforge\r\n\r\nSunucu dosyalarını indiremezse kurulum da başarısız olur.",
             "env_variable": "NEOFORGE_VERSION",
             "default_value": "",
             "user_viewable": true,

@@ -40,7 +40,7 @@
         },
         {
             "name": "Otomatik Yeniden Başlatma Modu",
-            "description": "to set auto reboot mode please enter -r",
+            "description": "otomatik yeniden başlatma modunu ayarlamak için lütfen -r girin",
             "env_variable": "AUTOREBOOT",
             "default_value": "",
             "user_viewable": true,

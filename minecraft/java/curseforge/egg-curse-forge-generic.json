@@ -41,7 +41,7 @@
     "variables": [
         {
             "name": "Mod Paketi Proje ID",
-            "description": "The modpack project ID from the CurseForge site on the pack page, veya 'zip' if installing from an uploaded server.zip file.\r\n\r\nFor example, the project Id of https://www.curseforge.com/minecraft/modpacks/bofa-mods ID is 375152",
+            "description": "Paket sayfasındaki CurseForge sitesinden modpack proje kimliği veya yüklenen bir server.zip dosyasından kuruluyorsa 'zip'.\r\n\r\nÖrneğin, https://www.curseforge.com/minecraft/modpacks/bofa-mods kimliğinin proje kimliği 375152'dir",
             "env_variable": "PROJECT_ID",
             "default_value": "",
             "user_viewable": true,
@@ -51,7 +51,7 @@
         },
         {
             "name": "Mod Paketi Dosya ID",
-            "description": "The file ID belonging to a specific version of a modpack. Can either be the main file veya the file ID associated with sunucu pack.\r\n\r\nIf not provided the script will attempt to retrieve the latest server pack veya client pack available.",
+            "description": "Bir mod paketinin belirli bir sürümüne ait dosya kimliği. Ana dosya veya sunucu paketiyle ilişkili dosya kimliği olabilir.\r\n\r\nSağlanmazsa, komut dosyası mevcut en son sunucu paketini veya istemci paketini almaya çalışacaktır.",
             "env_variable": "VERSION_ID",
             "default_value": "latest",
             "user_viewable": true,
@@ -61,7 +61,7 @@
         },
         {
             "name": "CurseForge API anahtarı",
-            "description": "A CurseForge API key is required to use this egg. You can get an API key here: https://console.curseforge.com",
+            "description": "Bu yumurtayı kullanmak için CurseForge API anahtarı gereklidir. API anahtarını buradan alabilirsiniz: https://console.curseforge.com",
             "env_variable": "API_KEY",
             "default_value": "",
             "user_viewable": true,

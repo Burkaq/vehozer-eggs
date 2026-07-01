@@ -50,7 +50,7 @@
         },
         {
             "name": "Steam Guard Kodu",
-            "description": "Your Steam 2FA on your mobile phone. (Not really needed anymore as you get Approve requests now)",
+            "description": "Steam 2FA'nız cep telefonunuzda. (Artık Onay isteklerini aldığınız için artık gerçekten gerekli değil)",
             "env_variable": "STEAM_AUTH",
             "default_value": "",
             "user_viewable": true,
@@ -70,7 +70,7 @@
         },
         {
             "name": "Harita",
-            "description": "Default map",
+            "description": "varsayılan harita",
             "env_variable": "SRCDS_MAP",
             "default_value": "de_dust2",
             "user_viewable": true,

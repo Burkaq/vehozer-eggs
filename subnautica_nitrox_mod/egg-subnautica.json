@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Uygulama ID",
-            "description": "The ID corresponding to the game to download.",
+            "description": "İndirilecek oyuna karşılık gelen kimlik.",
             "env_variable": "APPID",
             "default_value": "264710",
             "user_viewable": false,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Steam kullanıcı adı",
-            "description": "Your Steam-Account SUername",
+            "description": "Steam Hesabınızın SU kullanıcı adı",
             "env_variable": "STEAM_USERNAME",
             "default_value": "",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Steam Şifresi",
-            "description": "Your Steam Account Password",
+            "description": "Steam Hesabınızın Şifresi",
             "env_variable": "STEAM_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Steam Guard Kodu",
-            "description": "Yout Steam Guard Code",
+            "description": "Yout Steam Guard Kodu",
             "env_variable": "STEAM_GUARDCODE",
             "default_value": "",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Nitrox Sürümü",
-            "description": "Which version of Nitrox to install and use. Use the version e.g. 1.5.0.1 veya latest for the newest release",
+            "description": "Nitrox'un hangi sürümünün kurulacağı ve kullanılacağı. Sürümü kullanın; 1.5.0.1 veya en yeni sürüm için en son sürüm",
             "env_variable": "NITROX_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "kayıt adı",
-            "description": "The save name for sunucu.",
+            "description": "Sunucunun kaydetme adı.",
             "env_variable": "SAVE_NAME",
             "default_value": "world",
             "user_viewable": true,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Password neccessary for connecting to the Server",
+            "description": "Sunucuya bağlanmak için gerekli şifre",
             "env_variable": "SUBNAUTICA_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -142,7 +142,7 @@
         },
         {
             "name": "UPnP ile Otomatik Port Yönlendirme",
-            "description": "If set to true, sunucu will try to open port on your router via UPnP",
+            "description": "True olarak ayarlanırsa sunucu, yönlendiricinizdeki bağlantı noktasını UPnP aracılığıyla açmaya çalışır.",
             "env_variable": "PORTFORWARD_ENABLE",
             "default_value": "False",
             "user_viewable": false,

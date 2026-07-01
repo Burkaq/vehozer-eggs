@@ -39,7 +39,7 @@
     "variables": [
         {
             "name": "Waterdog PE Sürümü",
-            "description": "The build to pull and install. (Ex. 23), veya set to latest\r\n\r\nThis is the build number on https://jenkins.waterdog.dev/",
+            "description": "Çekilecek ve kurulacak yapı. (Örn. 23), veya en yeniye ayarla\r\n\r\nBu, https://jenkins.waterdog.dev/ adresindeki yapı numarasıdır",
             "env_variable": "WATERDOG_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -48,8 +48,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "The jar to run to",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Koşmak için kavanoz",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,

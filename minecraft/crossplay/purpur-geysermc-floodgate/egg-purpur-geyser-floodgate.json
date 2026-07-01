@@ -42,7 +42,7 @@
     "variables": [
         {
             "name": "Minecraft Sürümü",
-            "description": "İndirilecek Minecraft sürümü. \r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanir.",
+            "description": "İndirilecek Minecraft sürümü. \r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanır.",
             "env_variable": "MINECRAFT_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -51,8 +51,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "The name of the .jar file to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucunun çalıştırılacağı .jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Derleme Numarası",
-            "description": "The build number for the Purpur release.\r\n\r\nEn son sürümü almak için latest olarak bırakın. Invalid versions will default to latest-stable.\r\n\r\nAccepted values: 'latest-stable' 'latest-successful'",
+            "description": "Purpur sürümünün yapı numarası.\r\n\r\nEn son sürümü almak için en son olarak bırakın. Geçersiz sürümler varsayılan olarak en son kararlı sürüme ayarlanacaktır.\r\n\r\nKabul edilen değerler: 'en son kararlı' 'en son başarılı'",
             "env_variable": "BUILD_NUMBER",
             "default_value": "latest",
             "user_viewable": true,

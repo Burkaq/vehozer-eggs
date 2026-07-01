@@ -39,7 +39,7 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
+            "name": "Sunucu Jar Dosyası",
             "description": "Çalıştırirken kullanılacak jar dosyasinin adı: Forge Mod.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
@@ -50,7 +50,7 @@
         },
         {
             "name": "SpongeForge Minecraft Sürümü",
-            "description": "Either use a full version such as: 1.20.6-50.0.22-11.0.0-RC1633 to fetch an exact version\r\nOr just use the Minecraft version such as: 1.20.6, 1.19.4, etc. to get the recommended version\r\nSupported versions can be found here: https://spongepowered.org/downloads/spongeforge",
+            "description": "Tam sürümü almak için 1.20.6-50.0.22-11.0.0-RC1633 gibi tam bir sürümü kullanın.\r\nVeya önerilen sürümü almak için yalnızca Minecraft sürümünü kullanın: 1.20.6, 1.19.4 vb.\r\nDesteklenen sürümler burada bulunabilir: https://spongepowered.org/downloads/spongeforge",
             "env_variable": "SF_MC_VERSION",
             "default_value": "1.20.6",
             "user_viewable": true,

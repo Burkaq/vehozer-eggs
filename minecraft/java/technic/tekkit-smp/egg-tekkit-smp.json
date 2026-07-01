@@ -35,7 +35,7 @@
     "variables": [
         {
             "name": "Mod Paketi Sürümü",
-            "description": "The version of Tekkit SMP to download. \r\n\r\nOverrides BUILD TYPE, if set.",
+            "description": "İndirilecek Tekkit SMP sürümü. \r\n\r\nAyarlanmışsa YAPI TİPİNİ geçersiz kılar.",
             "env_variable": "MODPACK_VERSION",
             "default_value": "",
             "user_viewable": true,
@@ -45,7 +45,7 @@
         },
         {
             "name": "Derleme Türü",
-            "description": "The type of server jar to download from Technic Solder.",
+            "description": "Technic Solder'dan indirilecek sunucu jar türü.",
             "env_variable": "BUILD_TYPE",
             "default_value": "recommended",
             "user_viewable": true,

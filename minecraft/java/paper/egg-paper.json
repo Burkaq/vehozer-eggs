@@ -40,7 +40,7 @@
     "variables": [
         {
             "name": "Minecraft Sürümü",
-            "description": "İndirilecek Minecraft sürümü. \r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanir.",
+            "description": "İndirilecek Minecraft sürümü. \r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanır.",
             "env_variable": "MINECRAFT_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -49,8 +49,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -70,7 +70,7 @@
         },
         {
             "name": "Derleme Numarası",
-            "description": "Paper sürümü için derleme numarasi.\r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanir.",
+            "description": "Paper sürümü için derleme numarası.\r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanır.",
             "env_variable": "BUILD_NUMBER",
             "default_value": "latest",
             "user_viewable": true,

@@ -39,8 +39,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -60,7 +60,7 @@
         },
         {
             "name": "Etiket Sürümü",
-            "description": "Optional.\r\n\r\nSpecify the tag version to install. Set latest to install latest",
+            "description": "İsteğe bağlı.\r\n\r\nYüklenecek etiket sürümünü belirtin. En sonuncuyu yüklemek için en sonuncuyu ayarlayın",
             "env_variable": "TAG_VERSION",
             "default_value": "latest",
             "user_viewable": true,

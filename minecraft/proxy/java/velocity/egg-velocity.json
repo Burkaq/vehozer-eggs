@@ -39,7 +39,7 @@
     "variables": [
         {
             "name": "Velocity Sürümü",
-            "description": "The Velocity Proxy version to download.\r\n\r\nSet to 'latest ' the download the last stable build.",
+            "description": "İndirilecek Velocity Proxy sürümü.\r\n\r\nSon kararlı yapıyı indirmek için 'en son' olarak ayarlayın.",
             "env_variable": "VELOCITY_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -48,8 +48,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Server Jarfile, by default this is set to 'velocity.jar'.\r\nSet it to otherwise if you wish to have a different jar dosyası name.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucu Jarfile, varsayılan olarak 'velocity.jar' olarak ayarlıdır.\r\nFarklı bir jar dosyası adına sahip olmak istiyorsanız bunu aksi şekilde ayarlayın.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "velocity.jar",
             "user_viewable": true,
@@ -69,7 +69,7 @@
         },
         {
             "name": "Derleme Numarası",
-            "description": "The build number for the velocity release.\r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanir.",
+            "description": "The build number for the velocity release.\r\n\r\nEn son sürümü almak için latest olarak bırakın. Geçersiz sürümler varsayılan olarak latest kullanır.",
             "env_variable": "BUILD_NUMBER",
             "default_value": "latest",
             "user_viewable": true,

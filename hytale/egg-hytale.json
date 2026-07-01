@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Erken Eklentileri Kabul Et",
-            "description": "Hytale warns that loading early plugins is unsupported and may cause stability issues.",
+            "description": "Hytale, erken eklentilerin yüklenmesinin desteklenmediği ve kararlılık sorunlarına neden olabileceği konusunda uyarıyor.",
             "env_variable": "HYTALE_ACCEPT_EARLY_PLUGINS",
             "default_value": "0",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Yama Hattı",
-            "description": "The branch of Hytale to install.",
+            "description": "Kurulacak Hytale şubesi.",
             "env_variable": "HYTALE_PATCHLINE",
             "default_value": "release",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Sentry'yi Devre Dışı Bırak",
-            "description": "Hytale uses Sentry to track crashes. Disable Sentry during active plugin development.",
+            "description": "Hytale, kazaları takip etmek için Sentry'yi kullanıyor. Etkin eklenti geliştirme sırasında Sentry'yi devre dışı bırakın.",
             "env_variable": "DISABLE_SENTRY",
             "default_value": "0",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Önceden Derlenmis Önbellek Kullan",
-            "description": "Hytale provides a pre-trained AOT Java cache which can significantly improve boot times.",
+            "description": "Hytale, önyükleme sürelerini önemli ölçüde iyileştirebilen önceden eğitilmiş bir AOT Java önbelleği sağlar.",
             "env_variable": "USE_AOT_CACHE",
             "default_value": "1",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Source Query Eklentisini Yükle",
-            "description": "Installs the Soruce Query plugin, so that your server responds to Source Query A2S requests (player count, server name, etc.)",
+            "description": "Soruce Query eklentisini yükler, böylece sunucunuz Source Query A2S isteklerine (oyuncu sayısı, sunucu adı vb.) yanıt verir.",
             "env_variable": "INSTALL_SOURCEQUERY_PLUGIN",
             "default_value": "1",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Source Query Portu",
-            "description": "The port that the Source Query plugin will use to respond to A2S requests. This should be different from the main server port. Defaults to the game port + 1.",
+            "description": "Kaynak Sorgu eklentisinin A2S isteklerine yanıt vermek için kullanacağı bağlantı noktası. Bu, ana sunucu bağlantı noktasından farklı olmalıdır. varsayılan olarak oyun bağlantı noktası + 1'dir.",
             "env_variable": "QUERY_PORT",
             "default_value": "",
             "user_viewable": true,

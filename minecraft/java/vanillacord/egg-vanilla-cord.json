@@ -7,7 +7,7 @@
     "exported_at": "2026-04-26T20:16:38+02:00",
     "name": "VanillaCord",
     "author": "support@pterodactyl.io",
-    "description": "Minecraft, blok yerlestirme ve maceralara atilma hakkındaki bir oyundur. Rastgele oluşturulmuş dunyalari keşfedin ve en basit evlerden en buyuk kalelere kadar harika seyler inşa edin. Yaratilim Modu'nda sinirsiz kaynaklarla oynayın veya Hayatta Kalma Modu'nda derin madenler kazarak tehlikeli yaratiklara karsi silah ve zirh uretin. Tüm bunlari tek basiniza veya arkadaslarinizla yapın.\n\nVanillaCord, BungeeCord'un ip_forward ayarina destek ekler.",
+    "description": "Minecraft, blok yerlestirme ve maceralara atilma hakkındaki bir oyundur. Rastgele oluşturulmuş dünyaları keşfedin ve en basit evlerden en buyuk kalelere kadar harika seyler inşa edin. Yaratilim Modu'nda sinirsiz kaynaklarla oynayın veya Hayatta Kalma Modu'nda derin madenler kazarak tehlikeli yaratiklara karsi silah ve zirh uretin. Tüm bunlari tek basiniza veya arkadaslarinizla yapın.\n\nVanillaCord, BungeeCord'un ip_forward ayarina destek ekler.",
     "features": [
         "eula",
         "java_version",
@@ -39,8 +39,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "Sunucu Sürümü",
-            "description": "The version of Minecraft Vanilla to install. Use \"latest\" to install the latest version.",
+            "description": "Yüklenecek Minecraft Vanilla sürümü. En son sürümü yüklemek için \"en son\" seçeneğini kullanın.",
             "env_variable": "VANILLA_VERSION",
             "default_value": "latest",
             "user_viewable": true,

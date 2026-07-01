@@ -29,8 +29,8 @@
     },
     "variables": [
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "İzin verilen maksimum oyuncu sayısı.a server will hold.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucunun barındırabileceği maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "8",
             "user_viewable": true,
@@ -40,7 +40,7 @@
         },
         {
             "name": "Dünya Boyutu",
-            "description": "Defines the worlds size. 3 sizes 1 (small), 2 (medium), 3 (large).",
+            "description": "Dünyanın boyutunu tanımlar. 3 boyut 1 (küçük), 2 (orta), 3 (büyük).",
             "env_variable": "WORLD_SIZE",
             "default_value": "1",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "Dünya adı",
-            "description": "The name for the world file.",
+            "description": "Dünya dosyasının adı.",
             "env_variable": "WORLD_NAME",
             "default_value": "world",
             "user_viewable": true,
@@ -60,7 +60,7 @@
         },
         {
             "name": "Tshock Sürümü",
-            "description": "The version on tshock that will be installed. \r\n\r\nLatest available is: v4.5.18!",
+            "description": "Yüklenecek tshock sürümü. \r\n\r\nEn son mevcut olan: v4.5.18!",
             "env_variable": "TSHOCK_VERSION",
             "default_value": "v4.5.18",
             "user_viewable": true,

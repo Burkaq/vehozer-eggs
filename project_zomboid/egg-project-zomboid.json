@@ -31,8 +31,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu adı",
-            "description": "The internal server name used for save/ config files.",
+            "name": "Sunucu Adı",
+            "description": "dosyaları kaydetmek/yapılandırmak için kullanılan dahili sunucu adı.",
             "env_variable": "SERVER_NAME",
             "default_value": "Pterodactyl",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Yönetici kullanıcı adı",
-            "description": "Username for the admin account",
+            "description": "Yönetici hesabı için kullanıcı adı",
             "env_variable": "ADMIN_USER",
             "default_value": "admin",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "Password for the admin account",
+            "description": "Yönetici hesabının şifresi",
             "env_variable": "ADMIN_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "SteamPort",
-            "description": "Sets the UDPPort option",
+            "description": "UDPPort seçeneğini ayarlar",
             "env_variable": "STEAM_PORT",
             "default_value": "16262",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "PZ Steam App ID",
-            "description": "PZ Steam App ID",
+            "description": "PZ Steam Uygulama Kimliği",
             "env_variable": "SRCDS_APPID",
             "default_value": "380870",
             "user_viewable": false,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Steam Beta Dalı [yeniden kurulum gerekir]",
-            "description": "Beta branch to install, such as b41multiplayer. Leave blank to install normal branch",
+            "description": "B41multiplayer gibi kurulacak beta dalı. Normal şubeyi kurmak için boş bırakın",
             "env_variable": "SRCDS_BETAID",
             "default_value": "",
             "user_viewable": true,

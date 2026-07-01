@@ -51,7 +51,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
+            "name": "Maksimum Oyuncu Sayısı",
             "description": "Sunucuya katılabilecek maksimum oyuncu sayısını belirler.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "12",
@@ -102,7 +102,7 @@
         },
         {
             "name": "RCON'u Etkinleştir",
-            "description": "Etkinleştir / Devre Dışı Bırak RCON for using RCON commands with external tools. By default this will be disabled.",
+            "description": "Etkinleştir / Devre Dışı RCON komutlarını harici araçlarla kullanmak için RCON'u bırakın. varsayılan olarak bu devre dışı bırakılacaktır.",
             "env_variable": "RCON_ENABLED",
             "default_value": "0",
             "user_viewable": true,
@@ -111,7 +111,7 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
+            "name": "Sunucu Adı",
             "description": "Steam sunucu tarayıcısında listelenen sunucu adini belirler.",
             "env_variable": "SERVER_NAME",
             "default_value": "A Pterodactyl hosted CS2 Server",

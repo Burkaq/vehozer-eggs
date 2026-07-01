@@ -39,7 +39,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı (Slot)",
+            "name": "Maksimum Oyuncu Sayısı (Slot)",
             "description": "",
             "env_variable": "SRV_SLOTS",
             "default_value": "32",
@@ -70,7 +70,7 @@
         },
         {
             "name": "Oyun ID",
-            "description": "The ID corresponding to the game to download and run using HLDS.\r\n\r\nThe HLDS server ID is 90. This should not be changed.",
+            "description": "HLDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen kimlik.\r\n\r\nHLDS sunucu kimliği 90'dır. Bu değiştirilmemelidir.",
             "env_variable": "SRCDS_APPID",
             "default_value": "90",
             "user_viewable": false,
@@ -80,7 +80,7 @@
         },
         {
             "name": "Beta Dal",
-            "description": "Leave empty for the public branch, for the legacy version select steam_legacy.",
+            "description": "Genel şube için boş bırakın, eski sürüm için steam_legacy'yi seçin.",
             "env_variable": "SRCDS_BETAID",
             "default_value": "",
             "user_viewable": true,
@@ -90,7 +90,7 @@
         },
         {
             "name": "Steam kullanıcı adı",
-            "description": "Username associated wanted to be used. Not needed.",
+            "description": "İlişkili kullanıcı adı kullanılmak istendi. Gerekli değil.",
             "env_variable": "STEAM_USER",
             "default_value": "",
             "user_viewable": false,
@@ -100,7 +100,7 @@
         },
         {
             "name": "Steam Şifresi",
-            "description": "Steam Password for account. Not needed.",
+            "description": "Hesap için Steam Şifresi. Gerekli değil.",
             "env_variable": "STEAM_PASS",
             "default_value": "",
             "user_viewable": false,
@@ -110,7 +110,7 @@
         },
         {
             "name": "Steam Doğrulama",
-            "description": "Steam authenticator code for the account. Not Needed.",
+            "description": "Hesap için Steam kimlik doğrulayıcı kodu. Gerekli Değil.",
             "env_variable": "STEAM_AUTH",
             "default_value": "",
             "user_viewable": false,

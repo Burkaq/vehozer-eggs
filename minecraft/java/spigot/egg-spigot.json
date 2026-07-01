@@ -7,7 +7,7 @@
     "exported_at": "2026-04-26T20:16:38+02:00",
     "name": "Spigot",
     "author": "support@pterodactyl.io",
-    "description": "Spigot, dünya en yaygin kullanılan modlanmış Minecraft sunucu yazilimidir. Bircok onde gelen Minecraft sunucu agina guc vererek buyuk oyuncu kitleleriyle başa cikabilmelerini ve oyuncularinin memnuniyetini saglamalarini garanti eder. Spigot, bircok lag nedenini azaltarak ve ortadan kaldırarak, sunucu yöneticiliği isinizi kolaylastiran kullanisli özellikler ve ayarlar ekleyerek çalışır.",
+    "description": "Spigot, dünya en yaygin kullanılan modlanmış Minecraft sunucu yazilimidir. Bircok onde gelen Minecraft sunucu agina güç vererek buyuk oyuncu kitleleriyle başa cikabilmelerini ve oyuncularinin memnuniyetini saglamalarini garanti eder. Spigot, bircok lag nedenini azaltarak ve ortadan kaldırarak, sunucu yöneticiliği isinizi kolaylastiran kullanisli özellikler ve ayarlar ekleyerek çalışır.",
     "features": [
         "eula",
         "java_version",
@@ -39,8 +39,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "İndirme Yolu",
-            "description": "A URL to use to download Spigot rather than building it on sunucu. This is not user viewable. Use <code>{{DL_VERSION}}</code> in the URL to automatically insert the assigned version into the URL. If you do not enter a URL Spigot will build directly in the container (this will fail on low memory containers).",
+            "description": "Sunucu üzerinde oluşturmak yerine Spigot'u indirmek için kullanılacak bir URL. Bu kullanıcı tarafından görüntülenemez. Atanan sürümü URL'ye otomatik olarak eklemek için URL'de <code>__PH_0__</code> kullanın. Bir URL girmezseniz Spigot doğrudan kapsayıcıda oluşturulacaktır (bu, düşük bellekli kaplarda başarısız olacaktır).",
             "env_variable": "DL_PATH",
             "default_value": "",
             "user_viewable": false,
@@ -60,7 +60,7 @@
         },
         {
             "name": "Spigot Sürümü",
-            "description": "The version of Spigot to download (using the --rev tag from https://hub.spigotmc.org/versions). Use \"latest\" for latest.",
+            "description": "İndirilecek Spigot sürümü (https://hub.spigotmc.org/versions). adresindeki --rev etiketi kullanılarak) En son sürüm için \"latest\" kullanın.",
             "env_variable": "DL_VERSION",
             "default_value": "latest",
             "user_viewable": true,

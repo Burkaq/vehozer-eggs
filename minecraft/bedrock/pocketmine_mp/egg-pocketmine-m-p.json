@@ -30,7 +30,7 @@
     "variables": [
         {
             "name": "Yüklenecek Sürüm",
-            "description": "Latest PocketMine version to install.",
+            "description": "Yüklenecek en son PocketMine sürümü.",
             "env_variable": "VERSION",
             "default_value": "PM5",
             "user_viewable": true,

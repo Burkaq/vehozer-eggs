@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Otomatik Güncellemeler",
-            "description": "Quickly checks for any server veya mod updates on startup, and updates if necessary.",
+            "description": "Başlangıçta herhangi bir sunucu veya mod güncellemesini hızlı bir şekilde kontrol eder ve gerekirse güncelleme yapar.",
             "env_variable": "AUTO_UPDATE",
             "default_value": "1",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Sunucu Bölgesi",
-            "description": "Region listed in sunucu browser. ISO 3166-1 alpha-2 codes can be used in this field.",
+            "description": "Sunucu tarayıcısında listelenen bölge. Bu alanda ISO 3166-1 alpha-2 kodları kullanılabilir.",
             "env_variable": "REGION",
             "default_value": "US",
             "user_viewable": true,
@@ -51,8 +51,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "Name displayed in sunucu browser.",
+            "name": "Sunucu Adı",
+            "description": "Sunucu tarayıcısında görüntülenen ad.",
             "env_variable": "SERVER_NAME",
             "default_value": "Arma Reforger Server",
             "user_viewable": true,
@@ -61,8 +61,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Maksimum oyuncu sayısı.allowed to join sunucu.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılabilecek maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "32",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Password required for clients to enter before they can join sunucu. Leave empty to have no password.",
+            "description": "İstemcilerin sunucuya katılmadan önce girmeleri gereken parola. Şifrenizin olmaması için boş bırakın.",
             "env_variable": "SERVER_PASS",
             "default_value": "",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Senaryo ID",
-            "description": "ID of scenario to run/play. Valid IDs can be viewed in the console upon startup of sunucu.",
+            "description": "Çalıştırılacak/oynatılacak senaryonun kimliği. Geçerli kimlikler, sunucu başlatıldığında konsolda görüntülenebilir.",
             "env_variable": "SCENARIO_ID",
             "default_value": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Otomatik katılabilir",
-            "description": "Set if the session can be selected through the auto join feature.",
+            "description": "Oturumun otomatik katılma özelliği aracılığıyla seçilip seçilemeyeceğini ayarlayın.",
             "env_variable": "AUTO_JOINABLE",
             "default_value": "true",
             "user_viewable": true,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Sunucu tarayıcısında Görünür",
-            "description": "Set the visibility of sunucu in the Server Browser.",
+            "description": "Sunucu tarayıcısında sunucunun görünürlüğünü ayarlayın.",
             "env_variable": "VISIBLE",
             "default_value": "true",
             "user_viewable": true,
@@ -122,7 +122,7 @@
         },
         {
             "name": "BattlEye'i Etkinleştir",
-            "description": "Enables the anti-cheat engine on sunucu and requires all clients to be running it.",
+            "description": "Sunucuda hile önleme motorunu etkinleştirir ve tüm istemcilerin bunu çalıştırmasını gerektirir.",
             "env_variable": "BATTLEYE",
             "default_value": "true",
             "user_viewable": true,
@@ -142,7 +142,7 @@
         },
         {
             "name": "[Gelişmiş] Maksimum FPS",
-            "description": "Sets a maximum FPS limit for sunucu, saving performance in some cases. Leave empty for no limit.",
+            "description": "Sunucu için maksimum FPS sınırını belirleyerek bazı durumlarda performanstan tasarruf sağlar. Sınırsız olarak boş bırakın.",
             "env_variable": "MAX_FPS",
             "default_value": "120",
             "user_viewable": true,
@@ -152,7 +152,7 @@
         },
         {
             "name": "[Gelişmiş] FPS Log Aralığı",
-            "description": "How often (in seconds) to log the FPS and other debug stats to the console. Set to 0 to disable.",
+            "description": "FPS ve diğer hata ayıklama istatistiklerinin konsola ne sıklıkta (saniye cinsinden) kaydedileceği. Devre dışı bırakmak için 0'a ayarlayın.",
             "env_variable": "LOG_INTERVAL",
             "default_value": "0",
             "user_viewable": true,
@@ -162,7 +162,7 @@
         },
         {
             "name": "[Onarım] Sunucu dosyalarını Doğrula",
-            "description": "\"true\" to enable; empty to disable. Validates all server files when Automatic Updates is enabled. Not: This will significantly increase server startup times, so it is recommended to only enable this when needed.",
+            "description": "etkinleştirmek için \"true\"; devre dışı bırakmak için boş. Otomatik Güncelleştirmeler etkinleştirildiğinde tüm sunucu dosyalarını doğrular. Not: Bu, sunucu başlatma sürelerini önemli ölçüde artıracağından, bunun yalnızca gerektiğinde etkinleştirilmesi önerilir.",
             "env_variable": "VALIDATE",
             "default_value": "",
             "user_viewable": true,

@@ -34,7 +34,7 @@
     "variables": [
         {
             "name": "Uygulama ID",
-            "description": "Duzenlemeyin!",
+            "description": "Düzenlemeyin!",
             "env_variable": "SRCDS_APPID",
             "default_value": "2394010",
             "user_viewable": false,
@@ -53,7 +53,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
+            "name": "Maksimum Oyuncu Sayısı",
             "description": "",
             "env_variable": "MAX_PLAYERS",
             "default_value": "32",
@@ -64,7 +64,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "If specified, players must provide this password (via the in-game chat veya RCON) to gain access to administrator commands on sunucu.",
+            "description": "Belirtilmişse, oyuncuların sunucudaki yönetici komutlarına erişim sağlamak için bu şifreyi (oyun içi sohbet veya RCON aracılığıyla) sağlamaları gerekir.",
             "env_variable": "ADMIN_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -74,7 +74,7 @@
         },
         {
             "name": "Genel IP",
-            "description": "Set this to sunucu public ip address.\r\nOnly needed if the allocation is a local ip, else the allocate ip will be used automatically",
+            "description": "Bunu sunucunun genel IP adresine ayarlayın.\r\nYalnızca tahsis yerel bir IP ise gereklidir, aksi takdirde tahsis edilen IP otomatik olarak kullanılacaktır",
             "env_variable": "PUBLIC_IP",
             "default_value": "",
             "user_viewable": true,
@@ -83,7 +83,7 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
+            "name": "Sunucu Adı",
             "description": "",
             "env_variable": "SERVER_NAME",
             "default_value": "A Pterodactyl hosted Palworld Server",
@@ -104,7 +104,7 @@
         },
         {
             "name": "RCON Portu",
-            "description": "Atanmasi gerekmez!",
+            "description": "Atanması gerekmez!",
             "env_variable": "RCON_PORT",
             "default_value": "25575",
             "user_viewable": true,
@@ -114,7 +114,7 @@
         },
         {
             "name": "RCON'u Etkinleştir",
-            "description": "Açık Olmali",
+            "description": "Açık Olmalı",
             "env_variable": "RCON_ENABLE",
             "default_value": "True",
             "user_viewable": false,
@@ -124,7 +124,7 @@
         },
         {
             "name": "Sunucu Açıklaması",
-            "description": "The description of sunucu.",
+            "description": "Sunucu açıklaması",
             "env_variable": "SERVER_DESCRIPTION",
             "default_value": "",
             "user_viewable": true,
@@ -134,7 +134,7 @@
         },
         {
             "name": "Bağlantı Platformu",
-            "description": "The platform players will be able to connect from",
+            "description": "Platform oyuncuları şuradan bağlanabilecek:",
             "env_variable": "ALLOW_CONNECT_PLATFORM",
             "default_value": "Steam",
             "user_viewable": true,

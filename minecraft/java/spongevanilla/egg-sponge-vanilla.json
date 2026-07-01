@@ -40,7 +40,7 @@
     "variables": [
         {
             "name": "SpongeVanilla Sürümü",
-            "description": "Example 1.12.2-7.1.6\r\n\r\nIf the version fails it defaults to recommended",
+            "description": "Örnek 1.12.2-7.1.6\r\n\r\nSürüm başarısız olursa varsayılan olarak önerilen sürüme geçer",
             "env_variable": "SV_VERSION",
             "default_value": "recommended",
             "user_viewable": true,
@@ -49,7 +49,7 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu Jar dosyası",
+            "name": "Sunucu Jar Dosyası",
             "description": "Çalıştırirken kullanılacak jar dosyasinin adı: Mod.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",

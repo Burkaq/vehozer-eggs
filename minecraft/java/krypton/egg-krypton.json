@@ -39,7 +39,7 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
+            "name": "Sunucu Jar Dosyası",
             "description": "Sunucunun adı.JAR to run sunucu with.",
             "env_variable": "SERVER_JAR",
             "default_value": "Krypton.jar",
@@ -50,7 +50,7 @@
         },
         {
             "name": "Krypton Sürümü",
-            "description": "The version of Krypton to download and use.",
+            "description": "İndirilecek ve kullanılacak Kripton sürümü.",
             "env_variable": "KRYPTON_VERSION",
             "default_value": "latest",
             "user_viewable": true,

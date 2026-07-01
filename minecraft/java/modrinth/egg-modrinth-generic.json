@@ -40,7 +40,7 @@
     "variables": [
         {
             "name": "Mod Paketi Proje ID",
-            "description": "This is the modpack project ID from the Modrinth site.\r\n\r\nFor example, the project ID of 'https://modrinth.com/modpack/fabulously-optimized/' is 1KVo5zza",
+            "description": "Bu, Modrinth sitesindeki modpack proje kimliğidir.\r\n\r\nÖrneğin, 'https://modrinth.com/modpack/fabulously-optimized/' proje kimliği 1KVo5zza'dır",
             "env_variable": "PROJECT_ID",
             "default_value": "",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "Mod Paketi Sürüm ID",
-            "description": "This is the modpack version ID from the Modrinth site.\r\n\r\nFor example, the version ID of 'https://modrinth.com/modpack/fabulously-optimized/version/4.7.4' is P9wA6exe",
+            "description": "Bu, Modrinth sitesindeki modpack sürüm kimliğidir.\r\n\r\nÖrneğin, 'https://modrinth.com/modpack/fabulously-optimized/version/4.7.4''nin sürüm kimliği P9wA6exe'dir",
             "env_variable": "VERSION_ID",
             "default_value": "latest",
             "user_viewable": true,

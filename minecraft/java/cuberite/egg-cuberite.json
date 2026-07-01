@@ -34,7 +34,7 @@
     "variables": [
         {
             "name": "Sunucu Açıklaması",
-            "description": "Server Description",
+            "description": "Sunucu Açıklaması",
             "env_variable": "SERV_DESC",
             "default_value": "Cuberite on Pterodactyl!",
             "user_viewable": true,
@@ -44,7 +44,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "The password for the webadmin panel 'admin' user",
+            "description": "Webadmin paneli 'admin' kullanıcısının şifresi",
             "env_variable": "ADMIN_PASS",
             "default_value": "ChangeMe",
             "user_viewable": true,
@@ -54,7 +54,7 @@
         },
         {
             "name": "WebAdmin Portu",
-            "description": "Port for the cuberite webadmin panel.",
+            "description": "Cuberite web yönetici paneli için bağlantı noktası.",
             "env_variable": "WEB_PORT",
             "default_value": "8080",
             "user_viewable": true,

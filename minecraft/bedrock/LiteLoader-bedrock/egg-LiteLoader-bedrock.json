@@ -30,7 +30,7 @@
     "variables": [
         {
             "name": "Bedrock Adanmış Sunucu Sürümü",
-            "description": "Insert BDS Version",
+            "description": "BDS Sürümünü Ekle",
             "env_variable": "BDS_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -40,7 +40,7 @@
         },
         {
             "name": "Liteloader Sürümü",
-            "description": "Insert Liteloader Version from Github Releases",
+            "description": "Github Sürümlerinden Liteloader Sürümünü Ekle",
             "env_variable": "LL_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -59,8 +59,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "The name for sunucu",
+            "name": "Sunucu Adı",
+            "description": "Sunucunun adı",
             "env_variable": "SERVERNAME",
             "default_value": "Bedrock Dedicated Server",
             "user_viewable": true,
@@ -89,8 +89,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Maximum players to join on sunucu",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılacak maksimum oyuncu",
             "env_variable": "MAXPLAYERS",
             "default_value": "10",
             "user_viewable": true,
@@ -100,7 +100,7 @@
         },
         {
             "name": "Dünya adı",
-            "description": "World/Level name to use for sunucu",
+            "description": "Sunucu için kullanılacak Dünya/Seviye adı",
             "env_variable": "WORLDNAME",
             "default_value": "Bedrock level",
             "user_viewable": true,

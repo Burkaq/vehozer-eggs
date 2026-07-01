@@ -29,8 +29,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu adı",
-            "description": "The name off sunucu",
+            "name": "Sunucu Adı",
+            "description": "Sunucunun adı",
             "env_variable": "SERVER_NAME",
             "default_value": "AC_Server",
             "user_viewable": true,
@@ -69,7 +69,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum İstemci sayısı",
+            "name": "Maksimum İstemci Sayısı",
             "description": "",
             "env_variable": "MAX_CLIENTS",
             "default_value": "18",

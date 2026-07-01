@@ -42,7 +42,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "If specified, players must provide this password (via the in-game console) to gain access to administrator commands on sunucu.",
+            "description": "Belirtilmişse, oyuncuların sunucudaki yönetici komutlarına erişim sağlamak için bu parolayı (oyun içi konsol aracılığıyla) sağlaması gerekir.",
             "env_variable": "ARK_ADMIN_PASSWORD",
             "default_value": "PleaseChangeMe",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Sunucu harita",
-            "description": "Available Maps: TheIsland, TheCenter, Ragnarok, ScorchedEarth_P, Aberration_P, Extinction, Valguero_P, Genesis, CrystalIsles, Gen2, Fjordur",
+            "description": "Mevcut Haritalar: TheIsland, TheCenter, Ragnarok, ScorchedEarth_P, Aberration_P, Extinction, Valguero_P, Genesis, CrystalIsles, Gen2, Fjordur",
             "env_variable": "SERVER_MAP",
             "default_value": "TheIsland",
             "user_viewable": true,
@@ -61,8 +61,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "ARK server name",
+            "name": "Sunucu Adı",
+            "description": "ARK sunucu adı",
             "env_variable": "SESSION_NAME",
             "default_value": "A Pterodactyl Hosted ARK Server",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "RCON Portu",
-            "description": "ARK rcon port used by rcon tools.",
+            "description": "Rcon araçları tarafından kullanılan ARK rcon bağlantı noktası.",
             "env_variable": "RCON_PORT",
             "default_value": "27020",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Sorgu Portu",
-            "description": "ARK query port used by steam server browser and ark client server browser.",
+            "description": "Steam sunucusu tarayıcısı ve ark istemci sunucusu tarayıcısı tarafından kullanılan ARK sorgu bağlantı noktası.",
             "env_variable": "QUERY_PORT",
             "default_value": "27015",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Sunucu Otomatik Güncelleme",
-            "description": "Enable auto-updating from steam",
+            "description": "Steam'den otomatik güncellemeyi etkinleştir",
             "env_variable": "AUTO_UPDATE",
             "default_value": "1",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Battle Eye",
-            "description": "Enable BattleEye",
+            "description": "BattleEye'ı Etkinleştir",
             "env_variable": "BATTLE_EYE",
             "default_value": "1",
             "user_viewable": true,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Uygulama ID",
-            "description": "ARK steam app id for auto updates. Leave blank to avoid auto update.",
+            "description": "Otomatik güncellemeler için ARK Steam uygulaması kimliği. Otomatik güncellemeyi önlemek için boş bırakın.",
             "env_variable": "SRCDS_APPID",
             "default_value": "376030",
             "user_viewable": true,
@@ -122,7 +122,7 @@
         },
         {
             "name": "Ek Argümanlar",
-            "description": "Specify additional launch parameters such as -crossplay. You must include a dash - and separate each parameter with space: -crossplay -exclusivejoin",
+            "description": "-crossplay gibi ek başlatma parametrelerini belirtin. Bir tire eklemeniz ve her parametreyi boşlukla ayırmanız gerekir: -crossplay -exclusivejoin",
             "env_variable": "ARGS",
             "default_value": "",
             "user_viewable": true,
@@ -132,7 +132,7 @@
         },
         {
             "name": "Modlar",
-            "description": "Specifies the order and which mods are loaded. ModIDs need to be comma-separated such as: ModID1,ModID2",
+            "description": "Sırayı ve hangi modların yüklendiğini belirtir. ModID'lerin virgülle ayrılması gerekir, örneğin: ModID1,ModID2",
             "env_variable": "MOD_ID",
             "default_value": "",
             "user_viewable": true,
@@ -141,8 +141,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Specifies the maximum amount of players able to join sunucu.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılabilecek maksimum oynatıcı sayısını belirtir.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "12",
             "user_viewable": true,
@@ -152,7 +152,7 @@
         },
         {
             "name": "Beta Dal",
-            "description": "Installs beta branch if specified.",
+            "description": "Belirtilmişse beta şubesini yükler.",
             "env_variable": "SRCDS_BETAID",
             "default_value": "",
             "user_viewable": true,

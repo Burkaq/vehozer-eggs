@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "ReHLDS Sürümü",
-            "description": "The version of ReHLDS to install, veya 'latest' for the latest release.",
+            "description": "Yüklenecek ReHLDS sürümü veya en son sürüm için 'en son'.",
             "env_variable": "VERSION",
             "default_value": "latest",
             "user_viewable": false,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Kullanılabilir Modüller",
-            "description": "Available Modules: rehlds, reunion, amxmodx, metamod-r, reapi and ReGameDLL_CS",
+            "description": "Mevcut Modüller: rehlds, reunion, amxmodx, metamod-r, reapi ve ReGameDLL_CS",
             "env_variable": "INSTALL_MODULES",
             "default_value": "rehlds,reunion,amxmodx,metamod-r,reapi,ReGameDLL_CS",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Oyun ID",
-            "description": "The ID corresponding to the game to download and run using HLDS.\r\n\r\nThe HLDS server ID is 90. This should not be changed.",
+            "description": "HLDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen kimlik.\r\n\r\nHLDS sunucu kimliği 90'dır. Bu değiştirilmemelidir.",
             "env_variable": "SRCDS_APPID",
             "default_value": "90",
             "user_viewable": false,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Oyun adı",
-            "description": "The name corresponding to the game to download and run using HLDS",
+            "description": "HLDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen ad",
             "env_variable": "HLDS_GAME",
             "default_value": "cstrike",
             "user_viewable": false,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Beta Dal",
-            "description": "Leave empty for the public branch, for the legacy version select steam_legacy.",
+            "description": "Genel şube için boş bırakın, eski sürüm için steam_legacy'yi seçin.",
             "env_variable": "SRCDS_BETAID",
             "default_value": "steam_legacy",
             "user_viewable": false,
@@ -112,7 +112,7 @@
         },
         {
             "name": "VAC Portu",
-            "description": "Specifies the VAC port sunucu should use. Default is 26900.",
+            "description": "Sunucunun kullanması gereken VAC bağlantı noktasını belirtir. varsayılan 26900'dür.",
             "env_variable": "VAC_PORT",
             "default_value": "26900",
             "user_viewable": false,
@@ -122,7 +122,7 @@
         },
         {
             "name": "Doğrula",
-            "description": "Validate game files on update. Keep it disabled with ReHLDS due to SteamCMD overwriting its changes",
+            "description": "Güncelleme sırasında oyun dosyalarını doğrulayın. SteamCMD'nin değişikliklerin üzerine yazması nedeniyle ReHLDS ile devre dışı bırakın",
             "env_variable": "VALIDATE",
             "default_value": "0",
             "user_viewable": false,

@@ -39,7 +39,7 @@
     "variables": [
         {
             "name": "VIAaaS JAR dosyası",
-            "description": "The name of the JAR file to be used when downloading & running VIAaaS.",
+            "description": "VIAaaS indirilirken ve çalıştırılırken kullanılacak JAR dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "VIAaaS-all.jar",
             "user_viewable": true,
@@ -49,7 +49,7 @@
         },
         {
             "name": "Web Sunucu Portu",
-            "description": "The port to listen to web server connections on.",
+            "description": "Web sunucusu bağlantılarının dinleneceği bağlantı noktası.",
             "env_variable": "WEBSERVER_PORT",
             "default_value": "25543",
             "user_viewable": true,

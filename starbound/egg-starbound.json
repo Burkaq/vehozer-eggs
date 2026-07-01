@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Steam kullanıcısı",
-            "description": "This is a required setting and cannot be set to anonymous.",
+            "description": "Bu gerekli bir ayardır ve anonim olarak ayarlanamaz.",
             "env_variable": "STEAM_USER",
             "default_value": "",
             "user_viewable": false,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Oyun ID",
-            "description": "The ID corresponding to the game to download and run using SRCDS.",
+            "description": "SRCDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen kimlik.",
             "env_variable": "SRCDS_APPID",
             "default_value": "211820",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Steam Doğrulama",
-            "description": "Steam account auth code. Required if you have 2fa enabled.",
+            "description": "Steam hesabı kimlik doğrulama kodu. 2fa'yı etkinleştirdiyseniz gereklidir.",
             "env_variable": "STEAM_AUTH",
             "default_value": "",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Sunucu Otomatik Güncelleme",
-            "description": "This is to auto-update the game server.",
+            "description": "Bu, oyun sunucusunu otomatik olarak güncellemek içindir.",
             "env_variable": "AUTO_UPDATE",
             "default_value": "1",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Atölye İçeriğini Kullan",
-            "description": "Set to true if you want to use your subscribed Workshop content",
+            "description": "Abone olduğunuz Atölye içeriğini kullanmak istiyorsanız doğru olarak ayarlayın",
             "env_variable": "WORKSHOP",
             "default_value": "0",
             "user_viewable": true,

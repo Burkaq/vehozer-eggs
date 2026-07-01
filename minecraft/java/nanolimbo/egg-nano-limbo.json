@@ -34,8 +34,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -45,7 +45,7 @@
         },
         {
             "name": "İndirme URL",
-            "description": "A URL to use to download.\r\nThis is optional! Let this field empty for the latest version.",
+            "description": "İndirmek için kullanılacak bir URL.\r\nBu isteğe bağlıdır! En son sürüm için bu alanı boş bırakın.",
             "env_variable": "DOWNLOAD_URL",
             "default_value": "",
             "user_viewable": true,
@@ -55,7 +55,7 @@
         },
         {
             "name": "Sürüm",
-            "description": "The version of NanoLimbo to download. Use \"latest\" for latest.",
+            "description": "İndirilecek NanoLimbo sürümü. En son için \"en son\"u kullanın.",
             "env_variable": "VERSION",
             "default_value": "latest",
             "user_viewable": true,

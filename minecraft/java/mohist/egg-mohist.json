@@ -39,8 +39,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "The name of the jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucunun çalıştırılacağı jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -60,7 +60,7 @@
         },
         {
             "name": "Derleme Numarası",
-            "description": "Optional: \r\nThe build number for the Mohist release. Overrides Build Type.",
+            "description": "İsteğe bağlı: \r\nMohist sürümünün yapı numarası. Yapı Türünü geçersiz kılar.",
             "env_variable": "BUILD_NUMBER",
             "default_value": "",
             "user_viewable": true,
@@ -70,7 +70,7 @@
         },
         {
             "name": "Proje",
-            "description": "The type of version to download.",
+            "description": "İndirilecek sürümün türü.",
             "env_variable": "PROJECT",
             "default_value": "mohist",
             "user_viewable": true,

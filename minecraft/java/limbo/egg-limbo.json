@@ -30,7 +30,7 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
+            "name": "Sunucu Jar Dosyası",
             "description": "Sunucunun adı.jar dosyası to run the Limbo server with.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "Limbo.jar",

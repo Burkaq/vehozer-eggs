@@ -42,7 +42,7 @@
     "variables": [
         {
             "name": "FTB Paket Arama Terimi",
-            "description": "the search term for finding the modpack. needs to be at least 4 characters long.\r\nFind out what term is needed by using the ftb app and searching with the term. make süre it only returns 1 result.\r\ncan also be searched for via: https://api.feed-the-beast.com/v1/modpacks/public/modpack/search/8?term={SEARCHTERM}\r\n\r\nonly needed if the modpack id and modpack version id is unknown.",
+            "description": "modpack'i bulmak için kullanılan arama terimi. en az 4 karakter uzunluğunda olması gerekiyor.\r\nFtb uygulamasını kullanarak ve terimle arama yaparak hangi terimin gerekli olduğunu öğrenin. make süre sadece 1 sonuç döndürür.\r\nayrıca şu yolla da aranabilir: https://api.feed-the-beast.com/v1/modpacks/public/modpack/search/8?term={SEARCHTERM}\r\n\r\nyalnızca modpack kimliği ve modpack sürüm kimliği bilinmiyorsa gereklidir.",
             "env_variable": "FTB_SEARCH_TERM",
             "default_value": "",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "FTB Mod Paketi ID",
-            "description": "The FTB Api modpack ID.\r\nNeeded if not using the search variable\r\n\r\nörnek: FTB Interactions ID is 5.\r\nhttps://api.feed-the-beast.com/v1/modpacks/public/modpack/5",
+            "description": "FTB Api mod paketi kimliği.\r\nArama değişkeni kullanılmıyorsa gereklidir\r\n\r\nörnek: FTB Etkileşim Kimliği 5'tir.\r\nhttps://api.feed-the-beast.com/v1/modpacks/public/modpack/5",
             "env_variable": "FTB_MODPACK_ID",
             "default_value": "",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "FTB Paket Sürümü",
-            "description": "what version of the modpack to install. leave empty if using the modpack version id variable.",
+            "description": "modpack'in hangi sürümünün kurulacağı. modpack sürüm kimliği değişkenini kullanıyorsanız boş bırakın.",
             "env_variable": "FTB_VERSION_STRING",
             "default_value": "",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "FTB Paket Sürüm ID",
-            "description": "The modpack api version ID.\r\nLeave this and FTB Pack Version empty to install latest.\r\n\r\nExample FTB Revelations version id for version \"2.0.2\" is 86.\r\nwhich would come out as: https://api.feed-the-beast.com/v1/modpacks/public/modpack/5/86",
+            "description": "Modpack API sürüm kimliği.\r\nEn son sürümü yüklemek için bunu ve FTB Paketi Sürümünü boş bırakın.\r\n\r\n\"2.0.2\" sürümü için örnek FTB Revelations sürüm kimliği 86'dır.\r\nşu şekilde ortaya çıkar: https://api.feed-the-beast.com/v1/modpacks/public/modpack/5/86",
             "env_variable": "FTB_MODPACK_VERSION_ID",
             "default_value": "",
             "user_viewable": true,

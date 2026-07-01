@@ -34,7 +34,7 @@
     "variables": [
         {
             "name": "Mod Paketi Sürümü",
-            "description": "Version of the modpack to use",
+            "description": "kullanılacak mod paketi sürümü",
             "env_variable": "MODPACK_VERSION",
             "default_value": "0.10.15",
             "user_viewable": true,

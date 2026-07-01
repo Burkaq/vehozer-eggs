@@ -35,8 +35,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "glowstone.jar",
             "user_viewable": true,
@@ -46,7 +46,7 @@
         },
         {
             "name": "Glowstone Sürümü",
-            "description": "The version of Glowstone to download. If it ends in SNAPSHOT, it will attempt to download from the maven repository.",
+            "description": "İndirilecek Glowstone sürümü. SNAPSHOT ile biterse maven deposundan indirmeye çalışacaktır.",
             "env_variable": "VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -56,7 +56,7 @@
         },
         {
             "name": "GitHub kullanıcı adı",
-            "description": "GitHub user to use for api calls.\r\n\r\nThis only needs to be set if you hit the GitHub API too often across multiple servers.",
+            "description": "API çağrıları için kullanılacak GitHub kullanıcısı.\r\n\r\nBunun yalnızca GitHub API'sine birden fazla sunucuda çok sık basarsanız ayarlanması gerekir.",
             "env_variable": "GITHUB_USER",
             "default_value": "",
             "user_viewable": false,
@@ -66,7 +66,7 @@
         },
         {
             "name": "GitHub OAuth anahtarı",
-            "description": "This can be either an OAuth veya a Personal Access Token.\r\n\r\nThis is required for the install is you set a user.",
+            "description": "Bu bir OAuth veya Kişisel Erişim Jetonu olabilir.\r\n\r\nBir kullanıcıyı ayarlamanız durumunda kurulum için bu gereklidir.",
             "env_variable": "GITHUB_OAUTH_TOKEN",
             "default_value": "",
             "user_viewable": false,
@@ -76,7 +76,7 @@
         },
         {
             "name": "GitHub Paketi",
-            "description": "The repository to download from.",
+            "description": "İndirilecek depo.",
             "env_variable": "GITHUB_PACKAGE",
             "default_value": "GlowstoneMC/Glowstone",
             "user_viewable": true,

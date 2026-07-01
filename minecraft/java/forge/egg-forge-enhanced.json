@@ -39,7 +39,7 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
+            "name": "Sunucu Jar Dosyası",
             "description": "Çalıştırirken kullanılacak jar dosyasinin adı: Forge version below 1.17.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
@@ -60,7 +60,7 @@
         },
         {
             "name": "Derleme Türü",
-            "description": "The type of server jar to download from forge.\r\n\r\nValid types are \"recommended\" and \"latest\".",
+            "description": "Forge'dan indirilecek sunucu jar türü.\r\n\r\nGeçerli türler \"önerilen\" ve \"en son\"dur.",
             "env_variable": "BUILD_TYPE",
             "default_value": "recommended",
             "user_viewable": true,
@@ -70,7 +70,7 @@
         },
         {
             "name": "Forge Sürümü",
-            "description": "Gets an exact version.\r\n\r\nEx. 1.15.2-31.2.4\r\n\r\nOverrides MC_VERSION and BUILD_TYPE. If it fails to download sunucu files it will fail to install.",
+            "description": "Tam bir sürüm alır.\r\n\r\nEski. 1.15.2-31.2.4\r\n\r\nMC_VERSION ve BUILD_TYPE'ı geçersiz kılar. Sunucu dosyalarını indiremezse kurulum da başarısız olur.",
             "env_variable": "FORGE_VERSION",
             "default_value": "",
             "user_viewable": true,

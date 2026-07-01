@@ -29,8 +29,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu adı",
-            "description": "The name of your server. This is what appears on sunucu list.",
+            "name": "Sunucu Adı",
+            "description": "Sunucunuzun adı. Sunucu listesinde görünen şey budur.",
             "env_variable": "NAME",
             "default_value": "BeamMP Server",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "BeamMP Sunucu Sürümü",
-            "description": "The BeamMP server version to be installed. Latest veya Geçersiz sürümler varsayılan olarak latest kullanir. See all available versions at https://github.com/BeamMP/BeamMP-Server/releases\r\n\r\nörnek: v3.1.0 veya  v2.2.0 veya latest",
+            "description": "The BeamMP server version to be installed. Latest veya Geçersiz sürümler varsayılan olarak latest kullanır. See all available versions at https://github.com/BeamMP/BeamMP-Server/releases\r\n\r\nörnek: v3.1.0 veya  v2.2.0 veya latest",
             "env_variable": "VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -60,7 +60,7 @@
         },
         {
             "name": "Kimlik Doğrulama anahtarı",
-            "description": "The authentication key for your server. A key can be obtained from the BeamMP keymaster at https://keymaster.beammp.com",
+            "description": "Sunucunuz için kimlik doğrulama anahtarı. Bir anahtar, https://keymaster.beammp.com adresindeki BeamMP anahtar yöneticisinden alınabilir.",
             "env_variable": "AUTHKEY",
             "default_value": "",
             "user_viewable": true,
@@ -69,7 +69,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
+            "name": "Maksimum Oyuncu Sayısı",
             "description": "İzin verilen maksimum oyuncu sayısı.on sunucu.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "6",
@@ -80,7 +80,7 @@
         },
         {
             "name": "Gizli",
-            "description": "Should sunucu be private?",
+            "description": "Sunucu özel mi olmalı?",
             "env_variable": "PRIVATE",
             "default_value": "false",
             "user_viewable": true,
@@ -90,7 +90,7 @@
         },
         {
             "name": "Maksimum Araç sayısı",
-            "description": "The maximum number of cars allowed to be spawned per player.",
+            "description": "Oyuncu başına izin verilen maksimum araba sayısı.",
             "env_variable": "MAX_CARS",
             "default_value": "1",
             "user_viewable": true,
@@ -100,7 +100,7 @@
         },
         {
             "name": "Harita",
-            "description": "The map for your server. Stock maps are listed below.\r\n\r\n/levels/gridmap_v2/info.json\r\n/levels/automation_test_track/info.json\r\n/levels/east_coast_usa/info.json\r\n/levels/hirochi_raceway/info.json\r\n/levels/italy/info.json\r\n/levels/jungle_rock_island/info.json\r\n/levels/industrial/info.json\r\n/levels/small_island/info.json\r\n/levels/smallgrid/info.json\r\n/levels/utah/info.json\r\n/levels/west_coast_usa/info.json\r\n/levels/driver_training/info.json\r\n/levels/derby/info.json",
+            "description": "Sunucunuzun harita. Stok haritaları aşağıda listelenmiştir.\r\n\r\n/levels/gridmap_v2/info.json\r\n/levels/automation_test_track/info.json\r\n/levels/east_coast_usa/info.json\r\n/levels/hirochi_raceway/info.json\r\n/levels/italy/info.json\r\n/levels/jungle_rock_island/info.json\r\n/levels/endüstriyel/info.json\r\n/levels/small_island/info.json\r\n/levels/smallgrid/info.json\r\n/levels/utah/info.json\r\n/levels/west_coast_usa/info.json\r\n/levels/driver_training/info.json\r\n/levels/derby/info.json",
             "env_variable": "MAP",
             "default_value": "/levels/gridmap_v2/info.json",
             "user_viewable": true,
@@ -110,7 +110,7 @@
         },
         {
             "name": "Sohbet Kaydi",
-            "description": "Enable chat logging by sunucu",
+            "description": "Sunucu tarafından sohbet günlüğünü etkinleştirme",
             "env_variable": "LOGCHAT",
             "default_value": "true",
             "user_viewable": true,

@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Uygulama ID",
-            "description": "The ID corresponding to the game to download.",
+            "description": "İndirilecek oyuna karşılık gelen kimlik.",
             "env_variable": "SRCDS_APPID",
             "default_value": "556450",
             "user_viewable": false,
@@ -41,7 +41,7 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
+            "name": "Sunucu Adı",
             "description": "Sunucunun adı., appears in Steam browser.",
             "env_variable": "SERVER_NAME",
             "default_value": "Pterodactyl Forest Server",
@@ -52,7 +52,7 @@
         },
         {
             "name": "Steam Portu",
-            "description": "Steam port",
+            "description": "Buhar portu",
             "env_variable": "STEAM_PORT",
             "default_value": "8766",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "[Bağlantı Portu] Sorgu Portu",
-            "description": "Query port, this port is also used for connecting to sunucu",
+            "description": "Sorgu bağlantı noktası, bu bağlantı noktası aynı zamanda sunucuya bağlanmak için de kullanılır",
             "env_variable": "QUERY_PORT",
             "default_value": "27016",
             "user_viewable": true,
@@ -71,8 +71,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Server player cap",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucu oyuncu sınırı",
             "env_variable": "MAX_PLAYERS",
             "default_value": "10",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Zorluk",
-            "description": "Server difficulty setting, Peaceful, Normal veya Hard.",
+            "description": "Sunucu zorluk ayarı, Huzurlu, Normal veya Zor.",
             "env_variable": "SERVER_DIFFICULTY",
             "default_value": "Normal",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Steam Hesap anahtarı",
-            "description": "The Steam Account Token is required for sunucu to save player progress. Use APP ID 242760 for the token generation. \r\n\r\nYou can generate the token on steam at https://steamcommunity.com/dev/managegameservers",
+            "description": "Sunucunun oyuncunun ilerlemesini kaydetmesi için Steam Hesap Jetonu gereklidir. Belirteç oluşturma için APP ID 242760'ı kullanın. \r\n\r\nTokenı Steam'de https://steamcommunity.com/dev/managegameservers adresinden oluşturabilirsiniz.",
             "env_variable": "STEAM_ACC",
             "default_value": "",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Password protects sunucu if set, any player must enter the password to join",
+            "description": "Parola, ayarlanmışsa sunucuyu korur; herhangi bir oyuncunun katılmak için parolayı girmesi gerekir",
             "env_variable": "SERVER_PASS",
             "default_value": "",
             "user_viewable": true,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "A password that will be used to gain admin access to sunucu in-game",
+            "description": "Oyun içi sunucuya yönetici erişimi sağlamak için kullanılacak bir şifre",
             "env_variable": "ADMIN_PASS",
             "default_value": "cHanGetHePaSwWord",
             "user_viewable": true,
@@ -132,7 +132,7 @@
         },
         {
             "name": "Windows Kurulumu",
-            "description": "This is required to install the correct Forest version. Removing veya touching this will overwrite the files with a non-existing Linux releases.",
+            "description": "Doğru Forest sürümünü yüklemek için bu gereklidir. Bunu kaldırmak veya buna dokunmak, mevcut olmayan Linux sürümlerinin bulunduğu dosyaların üzerine yazılacaktır.",
             "env_variable": "WINDOWS_INSTALL",
             "default_value": "1",
             "user_viewable": false,
@@ -142,7 +142,7 @@
         },
         {
             "name": "Otomatik Güncelleme",
-            "description": "0 disables auto-update on each server startup, while 1 enables it.",
+            "description": "0, her sunucu başlangıcında otomatik güncellemeyi devre dışı bırakır, 1 ise bunu etkinleştirir.",
             "env_variable": "AUTO_UPDATE",
             "default_value": "1",
             "user_viewable": true,
@@ -172,7 +172,7 @@
         },
         {
             "name": "Başlatma Tipi",
-            "description": "Init Type when starting server. \r\nNew to start fresh veya Continue to preload the saved game",
+            "description": "Başlatma Sunucuyu başlatırken yazın. \r\nYeni başlamak için yeni veya Kaydedilen oyunu önceden yüklemeye devam edin",
             "env_variable": "INIT_TYPE",
             "default_value": "New",
             "user_viewable": true,

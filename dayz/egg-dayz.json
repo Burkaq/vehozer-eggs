@@ -7,7 +7,7 @@
     "exported_at": "2024-07-04T17:23:00-07:00",
     "name": "DayZ",
     "author": "red_thirten@yahoo.com",
-    "description": "Bir post-apokaliptik dünya ne kadar hayatta kalabilirsiniz? Enfekte \"zombi\" nufusu tarafından istila edilmiş topraklarda, sinirli kaynaklar için diğer hayatta kalanlarla rekabet edin. Yabancılarla takım olup birlikte güçlü mu kalacaksiniz? Yoksa ihanetten kacinmak için yalniz bir kurt olarak mi oynayacaksiniz? Bu DayZ - bu sizin hikayeniz.",
+    "description": "Bir post-apokaliptik dünyada ne kadar hayatta kalabilirsiniz? Enfekte \"zombi\" nufusu tarafından istila edilmiş topraklarda, sinirli kaynaklar için diğer hayatta kalanlarla rekabet edin. Yabancılarla takım olup birlikte güçlü mu kalacaksiniz? Yoksa ihanetten kacinmak için yalniz bir kurt olarak mi oynayacaksiniz? Bu DayZ - bu sizin hikayeniz.",
     "features": [
         "steam_disk_space"
     ],
@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "[Host] Steam Sorgu Portu",
-            "description": "UDP port for Steam server list features. Helps sunucu be visible in the client server browser.",
+            "description": "Steam sunucu listesi özellikleri için UDP bağlantı noktası. Sunucunun istemci sunucu tarayıcısında görünür olmasına yardımcı olur.",
             "env_variable": "QUERY_PORT",
             "default_value": "27016",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "[Host] Steam kullanıcı adı",
-            "description": "Kurulum ve güncellemeler için kullanılır. Account does not need to own DayZ, but MUST BE a VALID Steam account (anonymous login cannot be used). For security reasons it is recommended that you create a new Steam account just for your dedicated servers. *This info is not visible to sunucu owner.*",
+            "description": "Kurulum ve güncellemeler için kullanılır. Hesabın DayZ'ye sahip olması gerekmez ancak GEÇERLİ bir Steam hesabı OLMALIDIR (anonim giriş kullanılamaz). Güvenlik nedeniyle, yalnızca özel sunucularınız için yeni bir Steam hesabı oluşturmanız önerilir. *Bu bilgi sunucu sahibi tarafından görülemez.*",
             "env_variable": "STEAM_USER",
             "default_value": "",
             "user_viewable": false,
@@ -52,7 +52,7 @@
         },
         {
             "name": "[Host] Steam Şifresi",
-            "description": "Kurulum ve güncellemeler için kullanılır. Steam Guard MUST be completely TURNED OFF for sunucu and mods to download efficiently. *This info is not visible to sunucu owner, BUT IS stored in PLAIN TEXT. It is NOT advised to use a personal account; best to use a dummy account.*",
+            "description": "Kurulum ve güncellemeler için kullanılır. Sunucunun ve modların verimli bir şekilde indirilebilmesi için Steam Guard'ın tamamen KAPATILMASI GEREKİR. *Bu bilgi sunucu sahibi tarafından görülemez, ANCAK DÜZ METİNDE saklanır. Kişisel bir hesap kullanmanız ÖNERİLMEZ; sahte bir hesap kullanmak en iyisidir.*",
             "env_variable": "STEAM_PASS",
             "default_value": "",
             "user_viewable": false,
@@ -62,7 +62,7 @@
         },
         {
             "name": "[Host] Mod İndirme/Güncellemeleri Devre Dışı Bırak",
-            "description": "If the Steam account does not own the base DayZ game, Steam Workshop mod downloads/updates will not work. If so, this setting allows disabling of this feature to avoid errors. (1 ON | 0 OFF)",
+            "description": "Steam hesabı temel DayZ oyununa sahip değilse Steam Workshop mod indirmeleri/güncellemeleri çalışmayacaktır. Böyle bir durumda, bu ayar hataları önlemek için bu özelliğin devre dışı bırakılmasına olanak tanır. (1 AÇIK | 0 KAPALI)",
             "env_variable": "DISABLE_MOD_UPDATES",
             "default_value": "0",
             "user_viewable": false,
@@ -72,7 +72,7 @@
         },
         {
             "name": "[Host] SteamCMD Yeniden Deneme sayısı",
-            "description": "How many times SteamCMD should retry downloading a server veya mod after a recoverable error. (ie. A particularly large mod download times out)",
+            "description": "Kurtarılabilir bir hatadan sonra SteamCMD'nin bir sunucuyu veya modu indirmeyi kaç kez yeniden denemesi gerektiği. (örn. Özellikle büyük bir mod indirme işlemi zaman aşımına uğrar)",
             "env_variable": "STEAMCMD_ATTEMPTS",
             "default_value": "3",
             "user_viewable": false,
@@ -82,7 +82,7 @@
         },
         {
             "name": "[Host] Oyun Sunucusu Kurulumunu Atla",
-            "description": "Skips the installation of game server files via SteamCMD during the installation script. Should only be enabled if you are trying to install sunucu with a Steam account that has Steam Guard enabled (not recommended).",
+            "description": "Kurulum komut dosyası sırasında oyun sunucusu dosyalarının SteamCMD aracılığıyla kurulumunu atlar. Yalnızca sunucuyu Steam Guard'ın etkin olduğu bir Steam hesabıyla yüklemeye çalışıyorsanız etkinleştirilmelidir (önerilmez).",
             "env_variable": "SKIP_INSTALL",
             "default_value": "0",
             "user_viewable": false,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Otomatik Güncellemeler",
-            "description": "Quickly checks for any server veya mod updates on startup, and updates if necessary.",
+            "description": "Başlangıçta herhangi bir sunucu veya mod güncellemesini hızlı bir şekilde kontrol eder ve gerekirse güncelleme yapar.",
             "env_variable": "UPDATE_SERVER",
             "default_value": "1",
             "user_viewable": true,
@@ -101,8 +101,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "Sunucunun adı.that will appear in sunucu list.",
+            "name": "Sunucu Adı",
+            "description": "Sunucu listesinde görünecek ad.",
             "env_variable": "SERVER_HOSTNAME",
             "default_value": "DayZ Server",
             "user_viewable": true,
@@ -111,8 +111,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Maksimum oyuncu sayısı.allowed to join sunucu.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılabilecek maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "64",
             "user_viewable": true,
@@ -122,7 +122,7 @@
         },
         {
             "name": "Sunucu Şifresi",
-            "description": "Sunucuya katılmak için gerekli şifre.Şifre olmaması için bos bırakın.",
+            "description": "Sunucuya katılmak için gerekli şifre. Şifre olmaması için boş bırakın.",
             "env_variable": "SERVER_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -132,7 +132,7 @@
         },
         {
             "name": "Yönetici Şifresi",
-            "description": "Password to log in as an admin on sunucu.",
+            "description": "Sunucuda yönetici olarak oturum açmak için şifre.",
             "env_variable": "ADMIN_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -142,7 +142,7 @@
         },
         {
             "name": "RCON Portu",
-            "description": "Used by Tools veya Battlemetrics to manage servers from outside. RCON Port is recommended to be at Game Port +3. For example, If the Game Port is 2302, then RCON Port should be 2305.",
+            "description": "Tools veya Battlemetrics tarafından sunucuları dışarıdan yönetmek için kullanılır. RCON Bağlantı Noktasının Oyun Bağlantı Noktası +3'te olması önerilir. Örneğin, Oyun Bağlantı Noktası 2302 ise RCON Bağlantı Noktası 2305 olmalıdır.",
             "env_variable": "RCON_PORT",
             "default_value": "2305",
             "user_viewable": true,
@@ -152,7 +152,7 @@
         },
         {
             "name": "RCON Şifresi",
-            "description": "This password is used to authenticate third parties to access server controls via RCON.",
+            "description": "Bu şifre, üçüncü tarafların RCON aracılığıyla sunucu kontrollerine erişmesini doğrulamak için kullanılır.",
             "env_variable": "RCON_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -162,7 +162,7 @@
         },
         {
             "name": "Mod Listesi dosyası (DayZ Launcher'dan Disa Aktarilmis)",
-            "description": "Filename for an exported modlist. This file will be parsed for mod installation and loading. Upload your HTML file to the root directory (eg. /home/container/modlist.html). Leave blank to disable loading mods from a modlist.",
+            "description": "Dışa aktarılan mod listesinin dosya adı. Bu dosya mod kurulumu ve yükleme için ayrıştırılacaktır. HTML dosyanızı kök dizine yükleyin (örn. /home/container/modlist.html). Mod listesinden mod yüklemeyi devre dışı bırakmak için boş bırakın.",
             "env_variable": "MOD_FILE",
             "default_value": "modlist.html",
             "user_viewable": true,
@@ -172,7 +172,7 @@
         },
         {
             "name": "Ek Modlar",
-            "description": "A semicolon-separated list of mod folders to load from the root directory. Useful for loading manually uploaded mods. Any mods in this list that are in \"@workshopID\" form will also be included in Automatic Updates (if enabled). NO capital letters, spaces, veya folders starting with a number! (ex. myMod;@123456789;@987654321;etc;)",
+            "description": "Kök dizinden yüklenecek mod klasörlerinin noktalı virgülle ayrılmış listesi. Manuel olarak yüklenen modları yüklemek için kullanışlıdır. Bu listedeki \"@workshopID\" formundaki tüm modlar Otomatik Güncellemelere de dahil edilecektir (eğer etkinse). Büyük harf, boşluk veya rakamla başlayan klasör YOKTUR! (örn. myMod;@123456789;@987654321;vb;)",
             "env_variable": "MODIFICATIONS",
             "default_value": "",
             "user_viewable": true,
@@ -182,7 +182,7 @@
         },
         {
             "name": "İmzaları Doğrula",
-            "description": "Ensures all clients have exactly the same version of mods veya addons that sunucu is running. Otherwise, they will be kicked upon connection. (2 ON | 0 OFF)",
+            "description": "Tüm istemcilerin, sunucunun çalıştırdığı modların veya eklentilerin tam olarak aynı sürümüne sahip olmasını sağlar. Aksi takdirde bağlantı kurulduğunda atılacaklardır. (2 AÇIK | 0 KAPALI)",
             "env_variable": "VERIFY_SIGNATURES",
             "default_value": "2",
             "user_viewable": true,
@@ -192,7 +192,7 @@
         },
         {
             "name": "Oyun Sürümünü Zorla",
-            "description": "When ON, sunucu will allow the connection only to clients with same the version as sunucu.",
+            "description": "AÇIK olduğunda, sunucu yalnızca sunucuyla aynı sürüme sahip istemcilerle bağlantıya izin verir.",
             "env_variable": "ENFORCE_BUILD",
             "default_value": "1",
             "user_viewable": true,
@@ -202,7 +202,7 @@
         },
         {
             "name": "VoN'u Devre Dışı Bırak",
-            "description": "When ON, will disable Voice over Network (voice chat) in sunucu.",
+            "description": "AÇIK olduğunda, sunucudaki Ağ Üzerinden Ses (sesli sohbet) devre dışı bırakılır.",
             "env_variable": "DISABLE_VON",
             "default_value": "0",
             "user_viewable": true,
@@ -212,7 +212,7 @@
         },
         {
             "name": "VoN Kalitesi",
-            "description": "Voice over Network codec quality; the higher the better. (Values 0-30)",
+            "description": "Ağ üzerinden Ses codec kalitesi; ne kadar yüksekse o kadar iyidir. (Değerler 0-30)",
             "env_variable": "VON_QUALITY",
             "default_value": "20",
             "user_viewable": true,
@@ -222,7 +222,7 @@
         },
         {
             "name": "Üçüncü Şahıs Kamerayı Devre Dışı Bırak",
-            "description": "When ON, will disable third person view while on sunucu.",
+            "description": "AÇIK olduğunda, sunucudayken üçüncü şahıs görünümünü devre dışı bırakır.",
             "env_variable": "DISABLE_THIRD",
             "default_value": "0",
             "user_viewable": true,
@@ -232,7 +232,7 @@
         },
         {
             "name": "Nişangahı Devre Dışı Bırak",
-            "description": "When ON, will disable the crosshair from being visible while on sunucu.",
+            "description": "AÇIK olduğunda, artı işaretinin sunucuda görünür olması devre dışı bırakılır.",
             "env_variable": "DISABLE_CROSSHAIR",
             "default_value": "0",
             "user_viewable": true,
@@ -242,7 +242,7 @@
         },
         {
             "name": "Kişisel Işığı Devre Dışı Bırak",
-            "description": "When ON, will disable a personal light positioned above all clients during the night time while on sunucu.",
+            "description": "AÇIK olduğunda, sunucudayken gece boyunca tüm istemcilerin üzerinde konumlandırılan kişisel ışığı devre dışı bırakır.",
             "env_variable": "DISABLE_PERSONAL_LIGHT",
             "default_value": "1",
             "user_viewable": true,
@@ -252,7 +252,7 @@
         },
         {
             "name": "Daha Karanlık Geceler",
-            "description": "When ON, will make nights darker (more accurate nights, but hard to see without a light).",
+            "description": "AÇIK olduğunda, geceler daha karanlık olur (geceler daha doğru olur, ancak ışık olmadan görülmesi zordur).",
             "env_variable": "LIGHTING_CONFIG",
             "default_value": "0",
             "user_viewable": true,
@@ -262,7 +262,7 @@
         },
         {
             "name": "Kalıcı Zaman",
-            "description": "The actual server time is saved to storage, so when ON, the next server start will use the saved time value.",
+            "description": "Gerçek sunucu zamanı depolamaya kaydedilir, dolayısıyla AÇIK olduğunda, bir sonraki sunucu başlangıcında kaydedilen zaman değeri kullanılır.",
             "env_variable": "PERSISTENT_TIME",
             "default_value": "0",
             "user_viewable": true,
@@ -272,7 +272,7 @@
         },
         {
             "name": "Zaman Çarpanı",
-            "description": "This is a time multiplier for in-game time (ie. 12 would move a full 24-hour day in-game 12 times faster, making it last 2 hours \"in real life\"). (Values: 0-24)",
+            "description": "Bu, oyun içi süre için bir zaman çarpanıdır (yani 12, oyun içinde 24 saatlik bir günü 12 kat daha hızlı hareket ettirerek \"gerçek hayatta\" 2 saat sürmesini sağlar). (Değerler: 0-24)",
             "env_variable": "TIME_MULT",
             "default_value": "12",
             "user_viewable": true,
@@ -282,7 +282,7 @@
         },
         {
             "name": "Gece Çarpanı",
-            "description": "This is an additional multiplier to either speed up veya slow down nights in-game. It is multiplied with the \"Time Multiplier\" variable to get it's final multiplier for night time speed. (Values: 0.1-64.0)",
+            "description": "Bu, oyundaki geceleri hızlandırmak veya yavaşlatmak için ek bir çarpandır. Gece hızının son çarpanını elde etmek için \"Zaman Çarpanı\" değişkeniyle çarpılır. (Değerler: 0,1-64,0)",
             "env_variable": "NIGHT_MULT",
             "default_value": "1",
             "user_viewable": true,
@@ -292,7 +292,7 @@
         },
         {
             "name": "[Onarım] Mod dosyalarını Küçük Harf Yap",
-            "description": "Every mod that is set to be loaded will have its folder and files changed to lowercase (to prevent errors). It is recommended to enable this for one server boot after copying a mod from a Windows machine to sunucu, veya if mods seem to not be loading.",
+            "description": "Yüklenecek her modun klasörü ve dosyaları küçük harfle değiştirilecektir (hataları önlemek için). Bir Windows makinesinden sunucuya bir mod kopyaladıktan sonra veya modlar yüklenmiyor gibi görünüyorsa, bunun bir sunucu önyüklemesi için etkinleştirilmesi önerilir.",
             "env_variable": "MODS_LOWERCASE",
             "default_value": "0",
             "user_viewable": true,
@@ -302,7 +302,7 @@
         },
         {
             "name": "[Onarım] Sunucu dosyalarını Doğrula",
-            "description": "Validates all server files when Automatic Updates is ON. Not: This will significantly increase server startup times, so it is recommended to only enable this when needed.",
+            "description": "Otomatik Güncelleştirmeler AÇIK olduğunda tüm sunucu dosyalarını doğrular. Not: Bu, sunucu başlatma sürelerini önemli ölçüde artıracağından, bunun yalnızca gerektiğinde etkinleştirilmesi önerilir.",
             "env_variable": "VALIDATE_SERVER",
             "default_value": "0",
             "user_viewable": true,
@@ -312,7 +312,7 @@
         },
         {
             "name": "[Gelişmiş] Yalnızca Sunucu Tarafı Modlar",
-            "description": "Mod folders to be used with the \"-serverMods\" startup option. They only run server-side and are not required by clients if \"Verify Signatures\" is ON. Any mods in this list that are in \"@workshopID\" form will also be included in Automatic Updates (if enabled). NO capital letters, spaces, veya folders starting with a number! Each folder must be followed with a semicolon (ex. @123456789;@987654321;etc;)",
+            "description": "\"-serverMods\" başlangıç ​​seçeneğiyle kullanılacak mod klasörleri. Yalnızca sunucu tarafında çalışırlar ve \"İmzaları Doğrula\" AÇIK ise istemciler tarafından gerekli değildir. Bu listedeki \"@workshopID\" formundaki tüm modlar Otomatik Güncellemelere de dahil edilecektir (eğer etkinse). Büyük harf, boşluk veya rakamla başlayan klasör YOKTUR! Her klasörün ardından noktalı virgül konulmalıdır (örn. @123456789;@987654321;etc;)",
             "env_variable": "SERVERMODS",
             "default_value": "",
             "user_viewable": true,
@@ -322,7 +322,7 @@
         },
         {
             "name": "[Gelişmiş] Ekstra Başlangıç Parametreleri",
-            "description": "See https://community.bistudio.com/wiki/DayZ:Server_Configuration#Launch_Parameters for more info on valid flags for this field.",
+            "description": "Bu alana ilişkin geçerli işaretler hakkında daha fazla bilgi için https://community.bistudio.com/wiki/DayZ:Server_Configuration#Launch_Parameters adresine bakın.",
             "env_variable": "STARTUP_PARAMS",
             "default_value": "-dologs -adminlog -netlog -freezecheck",
             "user_viewable": true,
@@ -332,7 +332,7 @@
         },
         {
             "name": "[Gelişmiş] Sunucu Binary'si",
-            "description": "Cannot currently be changed. Left in case other branches with different executable names are introduced at a later date.",
+            "description": "Şu anda değiştirilemiyor. Farklı yürütülebilir adlara sahip diğer dalların daha sonraki bir tarihte tanıtılması durumunda bırakılır.",
             "env_variable": "SERVER_BINARY",
             "default_value": "DayZServer",
             "user_viewable": true,
@@ -342,7 +342,7 @@
         },
         {
             "name": "[Gelişmiş] DayZ Adanmış Sunucu Uygulama ID",
-            "description": "Kurulum ve güncellemeler için kullanılır. Rarely needs to be changed. 223350 is for Stable branch and 1042420 is for experimental branch. Changing branches may require deleting all server files and reinstalling.",
+            "description": "Kurulum ve güncellemeler için kullanılır. Nadiren değiştirilmesi gerekir. 223350 Kararlı dal içindir ve 1042420 deneysel dal içindir. Dalların değiştirilmesi tüm sunucu dosyalarının silinmesini ve yeniden kurulmasını gerektirebilir.",
             "env_variable": "STEAMCMD_APPID",
             "default_value": "223350",
             "user_viewable": true,

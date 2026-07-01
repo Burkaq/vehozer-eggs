@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Sorgu Portu",
-            "description": "UDP port used by Steam to list sunucu and enable the discovery services.",
+            "description": "Sunucuyu listelemek ve keşif hizmetlerini etkinleştirmek için Steam tarafından kullanılan UDP bağlantı noktası.",
             "env_variable": "QUERY_PORT",
             "default_value": "27016",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "BlobSyncPort",
-            "description": "BlobSyncPort UDP port used by the BlobSync system to initialize game systems and exchange data.",
+            "description": "BlobSyncPort UDP bağlantı noktası, BlobSync sistemi tarafından oyun sistemlerini başlatmak ve veri alışverişinde bulunmak için kullanılır.",
             "env_variable": "BLOBSYNC_PORT",
             "default_value": "9700",
             "user_viewable": true,
@@ -51,7 +51,7 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
+            "name": "Sunucu Adı",
             "description": "Sunucunun adı.visible in sunucu list, and in the Steam contacts.",
             "env_variable": "SRV_NAME",
             "default_value": "Pterodactyl hosted Server",
@@ -61,7 +61,7 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
+            "name": "Maksimum Oyuncu Sayısı",
             "description": "İzin verilen maksimum oyuncu sayısı.simultaneously on sunucu.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "4",
@@ -82,7 +82,7 @@
         },
         {
             "name": "Oyun Modu",
-            "description": "Sets the difficulty game mode when creating a new save. This parameter is ignored if loading a save (save mode set to “continue” with a save that exists on the slot). If the game mode is set to “custom”, then the custom game mode settings will be read from CustomGameModeSettings option, described later.",
+            "description": "Yeni bir kayıt oluştururken zorluk oyun modunu ayarlar. Bir kayıt yüklenirken bu parametre göz ardı edilir (kayıt modu yuvada mevcut bir kayıtla \"devam\" olarak ayarlanır). Oyun modu “özel” olarak ayarlanmışsa, özel oyun modu ayarları daha sonra açıklanacak olan CustomGameModeSettings seçeneğinden okunacaktır.",
             "env_variable": "GAME_MODE",
             "default_value": "normal",
             "user_viewable": true,
@@ -162,7 +162,7 @@
         },
         {
             "name": "Ağ Testini Atla",
-            "description": "if you have problems to connect to your server, set this to TRUE",
+            "description": "sunucunuza bağlanmada sorun yaşıyorsanız bunu TRUE olarak ayarlayın",
             "env_variable": "SKIP_TESTS",
             "default_value": "false",
             "user_viewable": true,
@@ -172,7 +172,7 @@
         },
         {
             "name": "kayıt Yuvası",
-            "description": "If you uploaded an existing save from your PC you can enter the save slot number here.",
+            "description": "Bilgisayarınızdan mevcut bir kaydetmeyi yüklediyseniz, kaydetme yuvası numarasını buraya girebilirsiniz.",
             "env_variable": "SAVE_SLOT",
             "default_value": "0000000001",
             "user_viewable": true,

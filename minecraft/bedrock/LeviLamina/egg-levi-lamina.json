@@ -40,7 +40,7 @@
         },
         {
             "name": "Sürüm",
-            "description": "Version of LeviLamina to install in x.y.z format. Blank veya \"latest\" will install the latest release.",
+            "description": "X.y.z formatında yüklenecek LeviLamina sürümü. Boş veya \"latest\" en son sürümü yükleyecektir.",
             "env_variable": "VERSION",
             "default_value": "",
             "user_viewable": true,
@@ -49,8 +49,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "The name for sunucu",
+            "name": "Sunucu Adı",
+            "description": "Sunucunun adı",
             "env_variable": "SERVERNAME",
             "default_value": "Bedrock Dedicated Server",
             "user_viewable": true,
@@ -79,8 +79,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Maximum players to join on sunucu",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuya katılacak maksimum oyuncu",
             "env_variable": "MAXPLAYERS",
             "default_value": "10",
             "user_viewable": true,
@@ -90,7 +90,7 @@
         },
         {
             "name": "Dünya adı",
-            "description": "World/Level name to use for sunucu",
+            "description": "Sunucu için kullanılacak Dünya/Seviye adı",
             "env_variable": "WORLDNAME",
             "default_value": "Bedrock level",
             "user_viewable": true,

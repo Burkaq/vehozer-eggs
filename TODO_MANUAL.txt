@@ -1,5 +1,0 @@
-MANUEL CEVIRI GEREKEN DEGISKEN ISIMLERI
-============================================================
-Bu degisken isimleri sozlukte bulunamadi, manuel olarak cevrilmeli:
-
-Tumu cevrildi!

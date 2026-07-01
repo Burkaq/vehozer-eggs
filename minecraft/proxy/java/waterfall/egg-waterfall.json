@@ -39,7 +39,7 @@
     "variables": [
         {
             "name": "Minecraft Sürümü",
-            "description": "The version of Minecraft that Waterfall was built to support.",
+            "description": "Waterfall'ın desteklemek üzere oluşturulduğu Minecraft sürümü.",
             "env_variable": "MINECRAFT_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -49,7 +49,7 @@
         },
         {
             "name": "Waterfall Jar dosyası",
-            "description": "The name of the jar file to use when running Waterfall.",
+            "description": "Waterfall'ı çalıştırırken kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "waterfall.jar",
             "user_viewable": true,
@@ -59,7 +59,7 @@
         },
         {
             "name": "İndirme Bağlantısı",
-            "description": "A link to sunucu jar to download the Waterfall jar.",
+            "description": "Waterfall jar dosyasını indirmek için sunucu jar bağlantısı.",
             "env_variable": "DL_LINK",
             "default_value": "",
             "user_viewable": true,
@@ -69,7 +69,7 @@
         },
         {
             "name": "Waterfall Derleme Numarası",
-            "description": "Default is latest.\r\n\r\nif set to latest veya an invalid version will grab the latest build number.",
+            "description": "varsayılan en yenidir.\r\n\r\nen son veya geçersiz bir sürüme ayarlanmışsa, en son yapı numarasını alacaktır.",
             "env_variable": "BUILD_NUMBER",
             "default_value": "latest",
             "user_viewable": true,

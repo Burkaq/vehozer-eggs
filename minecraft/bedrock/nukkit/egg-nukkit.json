@@ -32,8 +32,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "The name of the Nukkit jar file to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucunun çalıştırılacağı Nukkit jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -43,7 +43,7 @@
         },
         {
             "name": "Nukkit Sürümü",
-            "description": "The snapshot version of Nukkit to download (e.g. 1.0-20250805.172443-1219). Use \"latest\" for latest veya leave empty and download manually.",
+            "description": "İndirilecek Nukkit'in anlık görüntü sürümü (ör. 1.0-20250805.172443-1219). En yeni için \"en son\" seçeneğini kullanın veya boş bırakın ve manuel olarak indirin.",
             "env_variable": "NUKKIT_VERSION",
             "default_value": "latest",
             "user_viewable": true,

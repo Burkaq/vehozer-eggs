@@ -43,7 +43,7 @@
         },
         {
             "name": "Steam Hesap anahtarı",
-            "description": "The Steam Account Token required for sunucu to be displayed publicly.",
+            "description": "Sunucunun herkese açık olarak görüntülenmesi için gereken Steam Hesabı Simgesi.",
             "env_variable": "STEAM_TOKEN",
             "default_value": "",
             "user_viewable": true,
@@ -63,7 +63,7 @@
         },
         {
             "name": "Atölye ID",
-            "description": "The ID of your workshop collection (the numbers at the end of the URL)",
+            "description": "Atölye koleksiyonunuzun kimliği (URL'nin sonundaki sayılar)",
             "env_variable": "WORKSHOP_ID",
             "default_value": "",
             "user_viewable": true,
@@ -73,7 +73,7 @@
         },
         {
             "name": "Oyun Modu",
-            "description": "The gamemode of your server.",
+            "description": "Sunucunuzun oyun modu.",
             "env_variable": "GAMEMODE",
             "default_value": "sandbox",
             "user_viewable": true,
@@ -82,8 +82,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "The maximum amount of players allowed on your game server.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Oyun sunucunuzda izin verilen maksimum oyuncu sayısı.",
             "env_variable": "MAX_PLAYERS",
             "default_value": "32",
             "user_viewable": true,
@@ -93,7 +93,7 @@
         },
         {
             "name": "Tickrate",
-            "description": "The tickrate defines how fast sunucu will update each entity's location.",
+            "description": "Onay oranı, sunucunun her varlığın konumunu ne kadar hızlı güncelleyeceğini tanımlar.",
             "env_variable": "TICKRATE",
             "default_value": "22",
             "user_viewable": true,
@@ -103,7 +103,7 @@
         },
         {
             "name": "Lua Yenileme",
-            "description": "0 = disable Lua refresh,\r\n1 = enable Lua refresh",
+            "description": "0 = Lua yenilemeyi devre dışı bırak,\r\n1 = Lua yenilemeyi etkinleştir",
             "env_variable": "LUA_REFRESH",
             "default_value": "0",
             "user_viewable": true,

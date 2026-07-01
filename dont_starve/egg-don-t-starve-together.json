@@ -31,8 +31,8 @@
     },
     "variables": [
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "Set İzin verilen maksimum oyuncu sayısı.that will be allowed to join the game. This option overrides the [GAMEPLAY] / max_players setting in cluster.ini.\r\n\r\ndefault is 16",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Ayarlanan İzin verilen maksimum oyuncu sayısı oyuna katılmasına izin verilecektir. Bu seçenek, Cluster.ini'deki [GAMEPLAY] / max_players ayarını geçersiz kılar.\r\n\r\nvarsayılan 16'dır",
             "env_variable": "MAX_PLAYERS",
             "default_value": "16",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Sunucu anahtarı",
-            "description": "Required to run a public server. This needs to be generated from in game.\r\n\r\nGet your token here:\r\nhttps://accounts.klei.com/account/game/servers?game=DontStarveTogether",
+            "description": "Genel bir sunucuyu çalıştırmak için gereklidir. Bunun oyun içinden oluşturulması gerekiyor.\r\n\r\nJetonunuzu buradan alın:\r\nhttps://accounts.klei.com/account/game/servers?game=DontStarveTogether",
             "env_variable": "SERVER_TOKEN",
             "default_value": "",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Uygulama ID",
-            "description": "Steam Server App ID",
+            "description": "Steam Sunucusu Uygulama Kimliği",
             "env_variable": "SRCDS_APPID",
             "default_value": "343050",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Sunucu Otomatik Güncelleme",
-            "description": "This is to enable auto-updating for servers.\r\n\r\nDefault is 0. Set to 1 to update",
+            "description": "Bu, sunucular için otomatik güncellemeyi etkinleştirmek içindir.\r\n\r\nvarsayılan 0'dır. Güncellemek için 1'e ayarlayın",
             "env_variable": "AUTO_UPDATE",
             "default_value": "0",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Oyun Modu",
-            "description": "Valid values are survival, endless veya wilderness",
+            "description": "Geçerli değerler hayatta kalma, sonsuz veya vahşi doğadır",
             "env_variable": "GAME_MODE",
             "default_value": "survival",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Kume adı",
-            "description": "This is the name that will show up in server browser.",
+            "description": "Bu, sunucu tarayıcısında görünecek addır.",
             "env_variable": "CLUSTER_NAME",
             "default_value": "A Pterodactyl Server",
             "user_viewable": true,
@@ -92,7 +92,7 @@
         },
         {
             "name": "Kume Açıklaması",
-            "description": "This will show up in sunucu details area on the “Browse Games” screen.",
+            "description": "Bu, “Oyunlara Göz At” ekranındaki sunucu ayrıntıları alanında görünecektir.",
             "env_variable": "CLUSTER_DESC",
             "default_value": "A Pterodactyl Hosted Server",
             "user_viewable": true,
@@ -102,7 +102,7 @@
         },
         {
             "name": "Ana Dünya Oluşumu Geçersiz Kılma",
-            "description": "Link to the lua file used to generate the master server map. Only used during the install phase.",
+            "description": "Ana sunucu harita oluşturmak için kullanılan lua dosyasına bağlantı. Yalnızca kurulum aşamasında kullanılır.",
             "env_variable": "MASTER_WORLDGEN",
             "default_value": "https://raw.githubusercontent.com/ptero-eggs/game-eggs/main/dont_starve/worldgenoverride.master.lua",
             "user_viewable": false,
@@ -112,7 +112,7 @@
         },
         {
             "name": "Ana Dünya Oluşumu Geçersiz Kılma",
-            "description": "Link to the lua file used to generate the caves server map. Only used during the install phase.\r\n\r\nDefault generates a cave map",
+            "description": "Caves sunucu harita oluşturmak için kullanılan lua dosyasına bağlantı. Yalnızca kurulum aşamasında kullanılır.\r\n\r\nvarsayılan bir mağara harita oluşturur",
             "env_variable": "CAVES_WORLDGEN",
             "default_value": "https://raw.githubusercontent.com/ptero-eggs/game-eggs/main/dont_starve/worldgenoverride.caves.lua",
             "user_viewable": false,

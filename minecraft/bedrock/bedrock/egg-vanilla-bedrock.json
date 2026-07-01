@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Bedrock Sürümü",
-            "description": "The version of bedrock. (Ex. 1.7.0.13)\r\n\r\nDefault version is latest.",
+            "description": "Ana kayanın versiyonu. (Örn. 1.7.0.13)\r\n\r\nvarsayılan sürüm en son sürümdür.",
             "env_variable": "BEDROCK_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "ld lib yolu",
-            "description": "Dumb reasons to need this",
+            "description": "Buna ihtiyaç duymak için aptalca nedenler",
             "env_variable": "LD_LIBRARY_PATH",
             "default_value": ".",
             "user_viewable": false,
@@ -51,8 +51,8 @@
             "field_type": "text"
         },
         {
-            "name": "Sunucu adı",
-            "description": "The name for sunucu",
+            "name": "Sunucu Adı",
+            "description": "Sunucunun adı",
             "env_variable": "SERVERNAME",
             "default_value": "Bedrock Dedicated Server",
             "user_viewable": true,
@@ -82,7 +82,7 @@
         },
         {
             "name": "Hilelere İzin Ver",
-            "description": "If true then cheats like commands can be used.\r\n\r\nAllowed values: \"true\" veya \"false\"",
+            "description": "Doğruysa komutlar gibi hileler kullanılabilir.\r\n\r\nİzin verilen değerler: \"true\" veya \"false\"",
             "env_variable": "CHEATS",
             "default_value": "false",
             "user_viewable": true,

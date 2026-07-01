@@ -7,7 +7,7 @@
     "exported_at": "2024-12-16T11:07:44+00:00",
     "name": "Left 4 Dead 2",
     "author": "pterodactyl@mazoyer.eu",
-    "description": "Left 4 Dead 2, \"Yesil Grip\" olarak adlandirilan ve insanlari hizla enfekte olmayan varliklara karsi asiri saldirganlik gosteren zombi benzeri yaratiklara ve mutasyona uğramış formlara donusturen bir hastaligin neden olduğu dünya capinda bir salginin sonrasında geçer. Bazi insanlar hastaliga bagisik iken, enfekte olanlarin bazilari semptom gostermez. Sivil Açıl Durum ve Savunma Ajansi (CEDA) ve ABD ordusu, mümkün olduğunca çok sayıda kurtulani tahliye etmeye çalışmak için güvenli bölgeler oluşturur.",
+    "description": "Left 4 Dead 2, \"Yesil Grip\" olarak adlandirilan ve insanlari hizla enfekte olmayan varliklara karsi asiri saldirganlik gosteren zombi benzeri yaratiklara ve mutasyona uğramış formlara donusturen bir hastaligin neden olduğu dünya capinda bir salginin sonrasında geçer. bazı insanlar hastaliga bagisik iken, enfekte olanlarin bazıları semptom gostermez. Sivil Açıl Durum ve Savunma Ajansi (CEDA) ve ABD ordusu, mümkün olduğunca çok sayıda kurtulani tahliye etmeye çalışmak için güvenli bölgeler oluşturur.",
     "features": [
         "steam_disk_space"
     ],
@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Oyun ID",
-            "description": "The ID corresponding to the game to download and run using SRCDS.",
+            "description": "SRCDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen kimlik.",
             "env_variable": "SRCDS_APPID",
             "default_value": "222860",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "varsayılan Harita",
-            "description": "Default map used when starting sunucu.",
+            "description": "Sunucu başlatılırken kullanılan varsayılan harita.",
             "env_variable": "SRCDS_MAP",
             "default_value": "c1m1_hotel",
             "user_viewable": true,

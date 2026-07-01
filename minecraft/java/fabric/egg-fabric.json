@@ -41,8 +41,8 @@
     },
     "variables": [
         {
-            "name": "Sunucu Jar dosyası",
-            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucuyu çalıştırmak için kullanılacak jar dosyasının adı.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "Minecraft Sürümü",
-            "description": "The version of Minecraft to install. Use \"latest\" to install the latest version, veya use \"snapshot\" to install the latest snapshot.",
+            "description": "Yüklenecek Minecraft sürümü. En son sürümü yüklemek için \"en son\"u kullanın veya en son anlık görüntüyü yüklemek için \"anlık görüntü\"yü kullanın.",
             "env_variable": "MC_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Fabric Sürümü",
-            "description": "The version of Fabric to install.",
+            "description": "Yüklenecek Fabric sürümü.",
             "env_variable": "FABRIC_VERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -72,7 +72,7 @@
         },
         {
             "name": "Fabric Yükleyici Sürümü",
-            "description": "The version of Fabric Loader to install.",
+            "description": "Yüklenecek Fabric Loader sürümü.",
             "env_variable": "LOADER_VERSION",
             "default_value": "latest",
             "user_viewable": true,

@@ -32,7 +32,7 @@
     "variables": [
         {
             "name": "Oyun ID",
-            "description": "The ID corresponding to the game to download and run using SRCDS.",
+            "description": "SRCDS kullanılarak indirilecek ve çalıştırılacak oyuna karşılık gelen kimlik.",
             "env_variable": "SRCDS_APPID",
             "default_value": "244310",
             "user_viewable": true,
@@ -42,7 +42,7 @@
         },
         {
             "name": "Oyun adı",
-            "description": "The name corresponding to the game to download and run using SRCDS.",
+            "description": "SRCDS kullanılarak indirilip çalıştırılacak oyuna karşılık gelen ad.",
             "env_variable": "SRCDS_GAME",
             "default_value": "tf2classic",
             "user_viewable": true,
@@ -52,7 +52,7 @@
         },
         {
             "name": "varsayılan Harita",
-            "description": "The default map to use when starting sunucu.",
+            "description": "Sunucuyu başlatırken kullanılacak varsayılan harita.",
             "env_variable": "SRCDS_MAP",
             "default_value": "ctf_2fort",
             "user_viewable": true,
@@ -62,7 +62,7 @@
         },
         {
             "name": "Oyun Sürümü",
-            "description": "Version of TF2C to download.",
+            "description": "İndirilecek TF2C sürümü.",
             "env_variable": "GAMEVERSION",
             "default_value": "latest",
             "user_viewable": true,
@@ -71,8 +71,8 @@
             "field_type": "text"
         },
         {
-            "name": "Maksimum Oyuncu sayısı",
-            "description": "The maximum amount of players allowed on sunucu.",
+            "name": "Maksimum Oyuncu Sayısı",
+            "description": "Sunucuda izin verilen maksimum oyuncu sayısı.",
             "env_variable": "MAXPLAYERS",
             "default_value": "24",
             "user_viewable": true,
