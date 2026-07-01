@@ -7,31 +7,31 @@
     "exported_at": "2025-10-14T02:10:45+00:00",
     "name": "Assetto Corsa",
     "author": "admin@softwarenoob.com",
-    "description": "Assetto Corsa (Italian for \"Race Setup\") is a sim racing video game developed by the Italian video game developer Kunos Simulazioni. It is designed with an emphasis on a realistic racing experience with support for extensive customization and moddability",
+    "description": "Assetto Corsa (Italyanca \"Yaris Ayari\"), Italyan video oyun gelistiricisi Kunos Simulazioni tarafından geliştirilen bir sim yarisi video oyunudur. Gercekci bir yaris deneyimi vurgusuyla tasarlanmış olup kapsamli ozellestirme ve modlanabilirlik desteği sunar.",
     "features": [
         "steam_disk_space"
     ],
     "docker_images": {
-        "ghcr.io\/ptero-eggs\/steamcmd:debian": "ghcr.io\/ptero-eggs\/steamcmd:debian"
+        "ghcr.io/ptero-eggs/steamcmd:debian": "ghcr.io/ptero-eggs/steamcmd:debian"
     },
     "file_denylist": [],
-    "startup": ".\/acServer",
+    "startup": "./acServer",
     "config": {
-        "files": "{\r\n    \"cfg\/server_cfg.ini\": {\r\n        \"parser\": \"file\",\r\n        \"find\": {\r\n            \"NAME\": \"NAME={{server.build.env.HOSTNAME}}\",\r\n            \"PASSWORD\": \"PASSWORD={{server.build.env.PASSWORD}}\",\r\n            \"ADMIN_PASSWORD\": \"ADMIN_PASSWORD={{server.build.env.ADMIN_PASSWORD}}\",\r\n            \"UDP_PORT\": \"UDP_PORT={{server.build.default.port}}\",\r\n            \"TCP_PORT\": \"TCP_PORT={{server.build.default.port}}\",\r\n            \"HTTP_PORT\": \"HTTP_PORT={{server.build.env.HTTP_PORT}}\"\r\n        }\r\n    }\r\n}",
+        "files": "{\r\n    \"cfg/server_cfg.ini\": {\r\n        \"parser\": \"file\",\r\n        \"find\": {\r\n            \"NAME\": \"NAME={{server.build.env.HOSTNAME}}\",\r\n            \"PASSWORD\": \"PASSWORD={{server.build.env.PASSWORD}}\",\r\n            \"ADMIN_PASSWORD\": \"ADMIN_PASSWORD={{server.build.env.ADMIN_PASSWORD}}\",\r\n            \"UDP_PORT\": \"UDP_PORT={{server.build.default.port}}\",\r\n            \"TCP_PORT\": \"TCP_PORT={{server.build.default.port}}\",\r\n            \"HTTP_PORT\": \"HTTP_PORT={{server.build.env.HTTP_PORT}}\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \"Server started\"\r\n}",
         "logs": "{}",
         "stop": "^C"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\n## just in case someone removed the defaults.\r\nif [[ \"${STEAM_USER}\" == \"\" ]] || [[ \"${STEAM_PASS}\" == \"\" ]]; then\r\n    echo -e \"steam user is not set.\\n\"\r\n    echo -e \"Using anonymous user.\\n\"\r\n    STEAM_USER=anonymous\r\n    STEAM_PASS=\"\"\r\n    STEAM_AUTH=\"\"\r\nelse\r\n    echo -e \"user set to ${STEAM_USER}\"\r\nfi\r\n\r\n## download and install steamcmd\r\ncd \/tmp\r\nmkdir -p \/mnt\/server\/steamcmd\r\ncurl -sSL -o steamcmd.tar.gz https:\/\/steamcdn-a.akamaihd.net\/client\/installer\/steamcmd_linux.tar.gz\r\ntar -xzvf steamcmd.tar.gz -C \/mnt\/server\/steamcmd\r\nmkdir -p \/mnt\/server\/steamapps # Fix steamcmd disk write error when this folder is missing\r\ncd \/mnt\/server\/steamcmd\r\n\r\n# SteamCMD fails otherwise for some reason, even running as root.\r\n# This is changed at the end of the install process anyways.\r\nchown -R root:root \/mnt\r\nexport HOME=\/mnt\/server\r\n\r\n## install game using steamcmd\r\n.\/steamcmd.sh +force_install_dir \/mnt\/server +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} $( [[ \"${WINDOWS_INSTALL}\" == \"1\" ]] && printf %s '+@sSteamCmdForcePlatformType windows' ) +app_update ${SRCDS_APPID} $( [[ -z ${SRCDS_BETAID} ]] || printf %s \"-beta ${SRCDS_BETAID}\" ) $( [[ -z ${SRCDS_BETAPASS} ]] || printf %s \"-betapassword ${SRCDS_BETAPASS}\" ) ${INSTALL_FLAGS} validate +quit\r\n\r\n## set up 32 bit libraries\r\nmkdir -p \/mnt\/server\/.steam\/sdk32\r\ncp -v linux32\/steamclient.so ..\/.steam\/sdk32\/steamclient.so\r\n\r\n## set up 64 bit libraries\r\nmkdir -p \/mnt\/server\/.steam\/sdk64\r\ncp -v linux64\/steamclient.so ..\/.steam\/sdk64\/steamclient.so\r\n\r\nif [ \"${STEAM_USER}\" == \"anonymous\" ]; then\r\n    echo -e \"ERROR - STEAM USER NOT SET\\n\"\r\n    echo -e \"Steam account must have the dedicated server in library to install and host the game\\n\"\r\n    echo -e \"You must configure Steam account in the server startup variables, after that reinstall the server\\n\"\r\nfi\r\n\r\n## install end\r\necho \"-----------------------------------------\"\r\necho \"Installation completed...\"\r\necho \"-----------------------------------------\"",
-            "container": "ghcr.io\/ptero-eggs\/installers:debian",
+            "script": "#!/bin/bash\r\n\r\n## just in case someone removed the defaults.\r\nif [[ \"${STEAM_USER}\" == \"\" ]] || [[ \"${STEAM_PASS}\" == \"\" ]]; then\r\n    echo -e \"steam user is not set.\\n\"\r\n    echo -e \"Using anonymous user.\\n\"\r\n    STEAM_USER=anonymous\r\n    STEAM_PASS=\"\"\r\n    STEAM_AUTH=\"\"\r\nelse\r\n    echo -e \"user set to ${STEAM_USER}\"\r\nfi\r\n\r\n## download and install steamcmd\r\ncd /tmp\r\nmkdir -p /mnt/server/steamcmd\r\ncurl -sSL -o steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz\r\ntar -xzvf steamcmd.tar.gz -C /mnt/server/steamcmd\r\nmkdir -p /mnt/server/steamapps # Fix steamcmd disk write error when this folder is missing\r\ncd /mnt/server/steamcmd\r\n\r\n# SteamCMD fails otherwise for some reason, even running as root.\r\n# This is changed at the end of the install process anyways.\r\nchown -R root:root /mnt\r\nexport HOME=/mnt/server\r\n\r\n## install game using steamcmd\r\n./steamcmd.sh +force_install_dir /mnt/server +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} $( [[ \"${WINDOWS_INSTALL}\" == \"1\" ]] && printf %s '+@sSteamCmdForcePlatformType windows' ) +app_update ${SRCDS_APPID} $( [[ -z ${SRCDS_BETAID} ]] || printf %s \"-beta ${SRCDS_BETAID}\" ) $( [[ -z ${SRCDS_BETAPASS} ]] || printf %s \"-betapassword ${SRCDS_BETAPASS}\" ) ${INSTALL_FLAGS} validate +quit\r\n\r\n## set up 32 bit libraries\r\nmkdir -p /mnt/server/.steam/sdk32\r\ncp -v linux32/steamclient.so ../.steam/sdk32/steamclient.so\r\n\r\n## set up 64 bit libraries\r\nmkdir -p /mnt/server/.steam/sdk64\r\ncp -v linux64/steamclient.so ../.steam/sdk64/steamclient.so\r\n\r\nif [ \"${STEAM_USER}\" == \"anonymous\" ]; then\r\n    echo -e \"ERROR - STEAM USER NOT SET\\n\"\r\n    echo -e \"Steam account must have the dedicated server in library to install and host the game\\n\"\r\n    echo -e \"You must configure Steam account in the server startup variables, after that reinstall the server\\n\"\r\nfi\r\n\r\n## install end\r\necho \"-----------------------------------------\"\r\necho \"Installation completed...\"\r\necho \"-----------------------------------------\"",
+            "container": "ghcr.io/ptero-eggs/installers:debian",
             "entrypoint": "bash"
         }
     },
     "variables": [
         {
-            "name": "Steam Username",
+            "name": "Steam Kullanıcı Adı",
             "description": "A steam username of an account that owns the game is required",
             "env_variable": "STEAM_USER",
             "default_value": "",
@@ -41,8 +41,8 @@
             "field_type": "text"
         },
         {
-            "name": "Steam Password",
-            "description": "Steam User Password",
+            "name": "Steam Şifresi",
+            "description": "Steam Kullanıcı Şifresi",
             "env_variable": "STEAM_PASS",
             "default_value": "",
             "user_viewable": true,
@@ -51,7 +51,7 @@
             "field_type": "text"
         },
         {
-            "name": "Steam Auth Code",
+            "name": "Steam Doğrulama Kodu",
             "description": "Steam Auth Code required if the Steam Account is using Steam Auth. Slow installs will cause the code to expire before it can be used.",
             "env_variable": "STEAM_AUTH",
             "default_value": "",
@@ -61,8 +61,8 @@
             "field_type": "text"
         },
         {
-            "name": "Server Name",
-            "description": "Name of the server",
+            "name": "Sunucu Adı",
+            "description": "Sunucunun adı.",
             "env_variable": "HOSTNAME",
             "default_value": "Pterodactyl Server",
             "user_viewable": true,
@@ -71,8 +71,8 @@
             "field_type": "text"
         },
         {
-            "name": "Server Password",
-            "description": "If enabled players must enter the password to join the server",
+            "name": "Sunucu Şifresi",
+            "description": "If enabled players must enter the password to join sunucu",
             "env_variable": "PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -81,8 +81,8 @@
             "field_type": "text"
         },
         {
-            "name": "Admin Password",
-            "description": "Used to login as server administrator, type \/help in-game for more",
+            "name": "Yönetici Şifresi",
+            "description": "Used to login as server administrator, type /help in-game for more",
             "env_variable": "ADMIN_PASSWORD",
             "default_value": "",
             "user_viewable": true,
@@ -91,7 +91,7 @@
             "field_type": "text"
         },
         {
-            "name": "HTTP Port",
+            "name": "HTTP Portu",
             "description": "HTTP Port",
             "env_variable": "HTTP_PORT",
             "default_value": "",
@@ -111,8 +111,8 @@
             "field_type": "text"
         },
         {
-            "name": "Auto Update",
-            "description": "autoupdate Server on start or restart. 1 = on; 0 = off",
+            "name": "Otomatik Güncelleme",
+            "description": "autoupdate Server on start veya restart. 1 = on; 0 = off",
             "env_variable": "AUTO_UPDATE",
             "default_value": "1",
             "user_viewable": true,
@@ -121,7 +121,7 @@
             "field_type": "text"
         },
         {
-            "name": "Windows Install",
+            "name": "Windows Kurulumu",
             "description": "Required to always install and update the correct version of the game.",
             "env_variable": "WINDOWS_INSTALL",
             "default_value": "1",

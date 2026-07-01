@@ -7,20 +7,20 @@
     "exported_at": "2026-04-26T20:16:38+02:00",
     "name": "Spigot",
     "author": "support@pterodactyl.io",
-    "description": "Spigot is the most widely-used modded Minecraft server software in the world. It powers many of the top Minecraft server networks around to ensure they can cope with their huge player base and ensure the satisfaction of their players. Spigot works by reducing and eliminating many causes of lag, as well as adding in handy features and settings that help make your job of server administration easier.",
+    "description": "Spigot, dunyadaki en yaygin kullanılan modlanmış Minecraft sunucu yazilimidir. Bircok onde gelen Minecraft sunucu agina guc vererek buyuk oyuncu kitleleriyle basa cikabilmelerini ve oyuncularinin memnuniyetini saglamalarini garanti eder. Spigot, bircok lag nedenini azaltarak ve ortadan kaldirarak, sunucu yoneticiligi isinizi kolaylastiran kullanisli özellikler ve ayarlar ekleyerek çalışır.",
     "features": [
         "eula",
         "java_version",
         "pid_limit"
     ],
     "docker_images": {
-        "Java 8": "ghcr.io\/ptero-eggs\/yolks:java_8",
-        "Java 11": "ghcr.io\/ptero-eggs\/yolks:java_11",
-        "Java 16": "ghcr.io\/ptero-eggs\/yolks:java_16",
-        "Java 17": "ghcr.io\/ptero-eggs\/yolks:java_17",
-        "java 21": "ghcr.io\/ptero-eggs\/yolks:java_21",
-        "java 22": "ghcr.io\/ptero-eggs\/yolks:java_22",
-        "Java 25": "ghcr.io\/ptero-eggs\/yolks:java_25"
+        "Java 8": "ghcr.io/ptero-eggs/yolks:java_8",
+        "Java 11": "ghcr.io/ptero-eggs/yolks:java_11",
+        "Java 16": "ghcr.io/ptero-eggs/yolks:java_16",
+        "Java 17": "ghcr.io/ptero-eggs/yolks:java_17",
+        "java 21": "ghcr.io/ptero-eggs/yolks:java_21",
+        "java 22": "ghcr.io/ptero-eggs/yolks:java_22",
+        "Java 25": "ghcr.io/ptero-eggs/yolks:java_25"
     },
     "file_denylist": [],
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
@@ -39,8 +39,8 @@
     },
     "variables": [
         {
-            "name": "Server Jar File",
-            "description": "The name of the server jarfile to run the server with.",
+            "name": "Sunucu Jar Dosyası",
+            "description": "Sunucunun adı.jar dosyası to run sunucu with.",
             "env_variable": "SERVER_JARFILE",
             "default_value": "server.jar",
             "user_viewable": true,
@@ -49,8 +49,8 @@
             "field_type": "text"
         },
         {
-            "name": "Download Path",
-            "description": "A URL to use to download Spigot rather than building it on the server. This is not user viewable. Use <code>{{DL_VERSION}}</code> in the URL to automatically insert the assigned version into the URL. If you do not enter a URL Spigot will build directly in the container (this will fail on low memory containers).",
+            "name": "İndirme Yolu",
+            "description": "A URL to use to download Spigot rather than building it on sunucu. This is not user viewable. Use <code>{{DL_VERSION}}</code> in the URL to automatically insert the assigned version into the URL. If you do not enter a URL Spigot will build directly in the container (this will fail on low memory containers).",
             "env_variable": "DL_PATH",
             "default_value": "",
             "user_viewable": false,
@@ -59,7 +59,7 @@
             "field_type": "text"
         },
         {
-            "name": "Spigot Version",
+            "name": "Spigot Sürümü",
             "description": "The version of Spigot to download (using the --rev tag from https://hub.spigotmc.org/versions). Use \"latest\" for latest.",
             "env_variable": "DL_VERSION",
             "default_value": "latest",

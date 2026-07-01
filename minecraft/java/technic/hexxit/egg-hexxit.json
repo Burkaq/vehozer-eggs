@@ -7,7 +7,7 @@
     "exported_at": "2024-06-01T19:39:46+00:00",
     "name": "Hexxit",
     "author": "aevum@decess.us",
-    "description": "Gear up and set forth on a campaign worthy of legend, for Hexxit has been unearthed! Dark dungeons, towering spires, weathered ruins and musty tomes lay before you. Lay claim to riches or create your own artifacts, tame beasts and carve out your own story in endless wonder. Alone or with friends, adventure awaits in Hexxit.\r\n\r\nHexxit is a new collection of mods for Minecraft that put adventure above all else, in the style of old Dungeons and Dragons campaigns. Exploration is interesting, the dangers are greater and the sense of satisfaction of clearing out a dungeon is intense. The modlist is full of quality content from some very talented individuals. Be sure to head over to the donate page and show your appreciation!\r\n\r\nhttps://www.technicpack.net/modpack/hexxit.552552",
+    "description": "Efsaneye layik bir sefer için kusaminizi hazirlayin ve yola cikin, cunku Hexxit ortaya cikarildi! Karanlık zindanlar, yukselen kuleler, yipranmis harabeler ve kuflu kitaplar onunuzde uzanir. Zenginliklere el koyun veya kendi esyalarinizi yaratin, canavarlari evcillestirin ve sonsuz merak icinde kendi hikayenizi olusturun. Ister tek basiniza ister arkadaslarinizla, Hexxit'te macera bekliyor.\n\nHexxit, eski Dungeons and Dragons seferleri tarzinda, macerayi her seyin ustunde tutan yeni bir Minecraft mod koleksiyonudur. Kesif ilginc, tehlikeler daha buyuk ve bir zindani temizlemenin tatmin duygusu yogundur. Mod listesi, çok yetenekli bireylerin kaliteli icerikleriyle doludur. Bagis sayfasina ugrayip takdirinizi gostermeyi unutmayin!\n\nhttps://www.technicpack.net/modpack/hexxit.552552",
     "features": [
         "eula",
         "java_version",
@@ -33,7 +33,7 @@
     },
     "variables": [
         {
-            "name": "Modpack Version",
+            "name": "Mod Paketi Sürümü",
             "description": "Version of the modpack to use",
             "env_variable": "MODPACK_VERSION",
             "default_value": "1.0.11",

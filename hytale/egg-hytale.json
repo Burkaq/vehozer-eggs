@@ -7,31 +7,31 @@
     "exported_at": "2026-04-22T23:58:04+00:00",
     "name": "Hytale",
     "author": "hello@pterodactyl.io",
-    "description": "Set out on an adventure built for both creation and play. Hytale blends the freedom of a sandbox with the momentum of an RPG: explore a procedurally generated world full of dungeons, secrets, and a variety of creatures, then shape it block by block.",
+    "description": "Hem yaratma hem de oynama için inşa edilmis bir maceraya atilin. Hytale, sandbox ozgurlugunu RPG'nin momentumuyla birleştiriyor: zindanlar, sirlar ve çeşitli yaratiklarla dolu prosedurel olarak uretilmis bir dunyayi kesfedin, sonra blok blok sekillendirin.",
     "features": [
         "java_version"
     ],
     "docker_images": {
-        "ghcr.io\/pterodactyl\/games:hytale": "ghcr.io\/pterodactyl\/games:hytale"
+        "ghcr.io/pterodactyl/games:hytale": "ghcr.io/pterodactyl/games:hytale"
     },
     "file_denylist": [],
-    "startup": "java $( ((USE_AOT_CACHE)) && printf %s \"-XX:AOTCache=Server\/HytaleServer.aot\" ) -Xms128M $( ((SERVER_MEMORY)) && printf %s \"-Xmx${SERVER_MEMORY}M\" ) -jar Server\/HytaleServer.jar $( ((HYTALE_ALLOW_OP)) && printf %s \"--allow-op\" ) $( ((HYTALE_ACCEPT_EARLY_PLUGINS)) && printf %s \"--accept-early-plugins\" ) $( ((DISABLE_SENTRY)) && printf %s \"--disable-sentry\" ) --auth-mode ${HYTALE_AUTH_MODE} --assets Assets.zip --bind 0.0.0.0:${SERVER_PORT}",
+    "startup": "java $( ((USE_AOT_CACHE)) && printf %s \"-XX:AOTCache=Server/HytaleServer.aot\" ) -Xms128M $( ((SERVER_MEMORY)) && printf %s \"-Xmx${SERVER_MEMORY}M\" ) -jar Server/HytaleServer.jar $( ((HYTALE_ALLOW_OP)) && printf %s \"--allow-op\" ) $( ((HYTALE_ACCEPT_EARLY_PLUGINS)) && printf %s \"--accept-early-plugins\" ) $( ((DISABLE_SENTRY)) && printf %s \"--disable-sentry\" ) --auth-mode ${HYTALE_AUTH_MODE} --assets Assets.zip --bind 0.0.0.0:${SERVER_PORT}",
     "config": {
         "files": "{}",
         "startup": "{\n    \"done\": \"Hytale Server Booted\"\n}",
         "logs": "{}",
-        "stop": "\/stop"
+        "stop": "/stop"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\nset -e\n\nmkdir -p \/mnt\/server\ncd \/mnt\/server\n\necho -e \"Downloading Hytale Downloader CLI...\"\n\nDOWNLOAD_URL=\"https:\/\/downloader.hytale.com\/hytale-downloader.zip\"\n\nrm -f hytale-downloader.zip\ncurl -o hytale-downloader.zip $DOWNLOAD_URL\nunzip -o hytale-downloader.zip -d hytale-downloader\nmv hytale-downloader\/hytale-downloader-linux-amd64 hytale-downloader\/hytale-downloader-linux\nchmod 555 hytale-downloader\/hytale-downloader-linux\n\necho -e \"Verifying Hytale Downloader installation...\"\n\necho -e \"Hytale Downloader version: `.\/hytale-downloader\/hytale-downloader-linux -version`\"\n\necho -e \"Hytale Downloader installed successfully.\"",
-            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "script": "#!/bin/ash\nset -e\n\nmkdir -p /mnt/server\ncd /mnt/server\n\necho -e \"Downloading Hytale Downloader CLI...\"\n\nDOWNLOAD_URL=\"https://downloader.hytale.com/hytale-downloader.zip\"\n\nrm -f hytale-downloader.zip\ncurl -o hytale-downloader.zip $DOWNLOAD_URL\nunzip -o hytale-downloader.zip -d hytale-downloader\nmv hytale-downloader/hytale-downloader-linux-amd64 hytale-downloader/hytale-downloader-linux\nchmod 555 hytale-downloader/hytale-downloader-linux\n\necho -e \"Verifying Hytale Downloader installation...\"\n\necho -e \"Hytale Downloader version: `./hytale-downloader/hytale-downloader-linux -version`\"\n\necho -e \"Hytale Downloader installed successfully.\"",
+            "container": "ghcr.io/pterodactyl/installers:alpine",
             "entrypoint": "ash"
         }
     },
     "variables": [
         {
-            "name": "Accept Early Plugins",
+            "name": "Erken Eklentileri Kabul Et",
             "description": "Hytale warns that loading early plugins is unsupported and may cause stability issues.",
             "env_variable": "HYTALE_ACCEPT_EARLY_PLUGINS",
             "default_value": "0",
@@ -41,7 +41,7 @@
             "field_type": "text"
         },
         {
-            "name": "Auth Mode",
+            "name": "Kimlik Doğrulama Modu",
             "description": "Authentication mode.",
             "env_variable": "HYTALE_AUTH_MODE",
             "default_value": "authenticated",
@@ -51,7 +51,7 @@
             "field_type": "text"
         },
         {
-            "name": "Patchline",
+            "name": "Yama Hattı",
             "description": "The branch of Hytale to install.",
             "env_variable": "HYTALE_PATCHLINE",
             "default_value": "release",
@@ -61,7 +61,7 @@
             "field_type": "text"
         },
         {
-            "name": "Disable Sentry",
+            "name": "Sentry'yi Devre Dışı Bırak",
             "description": "Hytale uses Sentry to track crashes. Disable Sentry during active plugin development.",
             "env_variable": "DISABLE_SENTRY",
             "default_value": "0",
@@ -71,7 +71,7 @@
             "field_type": "text"
         },
         {
-            "name": "Use Ahead-of-Time Cache",
+            "name": "Önceden Derlenmis Önbellek Kullan",
             "description": "Hytale provides a pre-trained AOT Java cache which can significantly improve boot times.",
             "env_variable": "USE_AOT_CACHE",
             "default_value": "1",
@@ -81,7 +81,7 @@
             "field_type": "text"
         },
         {
-            "name": "Allow operators",
+            "name": "Operatorlere İzin Ver",
             "description": "Allow operators",
             "env_variable": "HYTALE_ALLOW_OP",
             "default_value": "0",
@@ -91,7 +91,7 @@
             "field_type": "text"
         },
         {
-            "name": "Install Source Query plugin",
+            "name": "Source Query Eklentisini Yükle",
             "description": "Installs the Soruce Query plugin, so that your server responds to Source Query A2S requests (player count, server name, etc.)",
             "env_variable": "INSTALL_SOURCEQUERY_PLUGIN",
             "default_value": "1",
@@ -101,7 +101,7 @@
             "field_type": "text"
         },
         {
-            "name": "Source Query Port",
+            "name": "Source Query Portu",
             "description": "The port that the Source Query plugin will use to respond to A2S requests. This should be different from the main server port. Defaults to the game port + 1.",
             "env_variable": "QUERY_PORT",
             "default_value": "",

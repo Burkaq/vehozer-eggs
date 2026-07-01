@@ -14,7 +14,7 @@
         "pid_limit"
     ],
     "docker_images": {
-        "ghcr.io\/ptero-eggs\/yolks:java_8": "ghcr.io\/ptero-eggs\/yolks:java_8"
+        "ghcr.io/ptero-eggs/yolks:java_8": "ghcr.io/ptero-eggs/yolks:java_8"
     },
     "file_denylist": [],
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar forge-*.jar",
@@ -26,14 +26,14 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Forge Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\ncd \/mnt\/server\r\n\r\ncurl -sS https:\/\/servers.technicpack.net\/Technic\/servers\/the-1710-pack\/the-1710-pack_$MODPACK_VERSION.zip -o the-1710-pack_$MODPACK_VERSION.zip\r\n\r\nunzip the-1710-pack_$MODPACK_VERSION.zip\r\n\r\nrm -rf the-1710-pack_$MODPACK_VERSION.zip\r\n\r\n## install end\r\necho \"-----------------------------------------\"\r\necho \"Installation completed...\"\r\necho \"-----------------------------------------\"",
-            "container": "ghcr.io\/ptero-eggs\/installers:alpine",
+            "script": "#!/bin/ash\r\n# Forge Installation Script\r\n#\r\n# Server Files: /mnt/server\r\n\r\ncd /mnt/server\r\n\r\ncurl -sS https://servers.technicpack.net/Technic/servers/the-1710-pack/the-1710-pack_$MODPACK_VERSION.zip -o the-1710-pack_$MODPACK_VERSION.zip\r\n\r\nunzip the-1710-pack_$MODPACK_VERSION.zip\r\n\r\nrm -rf the-1710-pack_$MODPACK_VERSION.zip\r\n\r\n## install end\r\necho \"-----------------------------------------\"\r\necho \"Installation completed...\"\r\necho \"-----------------------------------------\"",
+            "container": "ghcr.io/ptero-eggs/installers:alpine",
             "entrypoint": "ash"
         }
     },
     "variables": [
         {
-            "name": "Modpack Version",
+            "name": "Mod Paketi Sürümü",
             "description": "Version of the modpack to use",
             "env_variable": "MODPACK_VERSION",
             "default_value": "0.10.15",

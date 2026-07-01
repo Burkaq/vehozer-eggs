@@ -7,7 +7,7 @@
     "exported_at": "2024-06-01T19:40:18+00:00",
     "name": "Tekkit Legends",
     "author": "aevum@decess.us",
-    "description": "The ancient power of Tekkits past return in this legendary pack! Wield the philosopher's stone, ride the rails, breed the bees, and much, much more! This pack will remind you of what you've always loved about Tekkit, while bringing you new mods to discover and enjoy!\r\n\r\nhttps://www.technicpack.net/modpack/tekkit-legends.735902",
+    "description": "Tekkit'in gecmisinin kadim gucu bu efsanevi pakette geri donuyor! Felsefe tasini kullanın, raylarda surun, arilari yetistirin ve çok daha fazlasi! Bu paket size Tekkit hakkinda her zaman sevdiginiz seyleri hatirlatirken, kesfedecek ve keyfini cikaracak yeni modlar sunar!\n\nhttps://www.technicpack.net/modpack/tekkit-legends.735902",
     "features": [
         "eula",
         "java_version",
@@ -33,7 +33,7 @@
     },
     "variables": [
         {
-            "name": "Modpack Version",
+            "name": "Mod Paketi Sürümü",
             "description": "Version of the modpack to use",
             "env_variable": "MODPACK_VERSION",
             "default_value": "1.1.1",

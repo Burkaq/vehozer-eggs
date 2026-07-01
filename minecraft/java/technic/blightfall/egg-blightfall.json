@@ -7,7 +7,7 @@
     "exported_at": "2024-06-01T19:39:49+00:00",
     "name": "Blightfall",
     "author": "aevum@decess.us",
-    "description": "Blightfall is a combination modpack and adventure map about surviving on an alien planet. It uses magic mods and tech mods to create a novel gameplay experience. Can you survive on a world completely covered by Thaumcraft taint?\r\n\r\nhttps://www.technicpack.net/modpack/blightfall.592618",
+    "description": "Blightfall, yabanci bir gezegende hayatta kalma hakkinda bir mod paketi ve macera haritasi birlesimidir. Yeni bir oynanış deneyimi yaratmak için buyu modlarini ve teknoloji modlarini kullanir. Tamamen Thaumcraft bozulmasiyla kapli bir dunyada hayatta kalabilir misiniz?\n\nhttps://www.technicpack.net/modpack/blightfall.592618",
     "features": [
         "eula",
         "java_version",
@@ -33,7 +33,7 @@
     },
     "variables": [
         {
-            "name": "Modpack Version",
+            "name": "Mod Paketi Sürümü",
             "description": "Version of the modpack to use",
             "env_variable": "MODPACK_VERSION",
             "default_value": "3.1.1-CE",
